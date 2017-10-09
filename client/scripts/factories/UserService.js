@@ -1,10 +1,10 @@
 myApp.factory('UserService', ['$http', '$location', function($http, $location){
-  console.log('User Service Loaded');
+  // console.log('User Service Loaded');
 
   var userObject = {};
 
   function redirect(page){
-  console.log('in page navigation', page);
+  // console.log('in page navigation', page);
   $location.url(page);
   }
 
@@ -16,7 +16,7 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
       $http.get('/user').then(function(response) {
           if(response.data.username) {
               userObject.userName = response.data.username;
-              console.log('User Data: ', userObject.userName);
+            //   console.log('User Data: ', userObject.userName);
           } else {
               $location.path('/home');
           }
@@ -25,7 +25,7 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
 
     logout : function() {
         $http.get('/user/logout').then(function(response) {
-          console.log('logged out');
+        //   console.log('logged out');
           $location.path('/home');
         });
     }

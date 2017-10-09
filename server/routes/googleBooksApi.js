@@ -6,18 +6,22 @@ var https = require('https');
 router.get('/:isbn', function(req, res){
     var isbn = req.params.isbn;
     var url = 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn;
+    var body = '';
     console.log('in /:isbn in googleBooksApi.js', isbn);
-        https.get(url, function (res){
-            res.setEncoding('utf8');
-            var body = '';
-            res.on('data', function(data){
+        https.get(url, function (result){
+            result.setEncoding('utf8');
+            // var body = '';
+            result.on('data', function(data){
                 body += data;
             });
-            res.on('end', function() {
+            result.on('end', function() {
                 body = JSON.parse(body);
-                console.log(body);
+                console.log('object from api to send', body);
+            res.send(body);
             });
         });
+        // console.log('object to send to server: ', body);
+        // res.send(body);
 });
 
 module.exports = router;
