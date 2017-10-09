@@ -5,9 +5,11 @@ var https = require('https');
 
 router.get('/:isbn', function(req, res){
     var isbn = req.params.isbn;
-    var url = 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn;
+    isbn = isbn.replace(/ /g,'+');
+    var url = 'https://www.googleapis.com/books/v1/volumes?q=:' + isbn;
     console.log('in /:isbn in googleBooksApi.js', isbn);
         https.get(url, function (res){
+          // console.log('this is the rez \n', data);
             res.setEncoding('utf8');
             var body = '';
             res.on('data', function(data){
