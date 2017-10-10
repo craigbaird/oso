@@ -2,6 +2,12 @@
     <div ng-include="'views/partials/header.html'"></div>
     <h1>Book Results</h1>
         <div class="infoContainer">
-            {{bookInfoFromApi}}
+                <img class="image" ng-src="{{ bookInfoFromApi.response.items[0].volumeInfo.imageLinks.thumbnail }}"/>
+            <ul>
+                <li><b>Title:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.title }}</li>
+                <li><b>Page Count:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.pageCount }}</li>
+                <li><b>Published Date:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.publishedDate }}</li>
+                <li><b>Authors:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.authors[0] }}</li>
+                <li><b>Description:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.description }}</li>
         </div>
 </div>
