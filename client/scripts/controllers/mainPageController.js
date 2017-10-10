@@ -4,4 +4,4 @@ myApp.controller('MainPageController', ['$scope', '$http', '$location', 'UserSer
 
   // connect controller data to factory data here
 
-}]); // end myApp.controller
+}]); 

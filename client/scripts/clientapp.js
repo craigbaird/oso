@@ -49,7 +49,15 @@ myApp.config(['$routeProvider', '$locationProvider',
         }]
       }
     })
-
+    .when('/bookResults', {
+      templateUrl: '/views/templates/bookResults.html',
+      controller: 'BookResultsController',
+      resolve: {
+        getuser : ['UserService', function(UserService){
+          return UserService.getuser();
+        }]
+      }
+    })
     .otherwise({
       redirectTo: 'home'
     });
