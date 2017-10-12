@@ -8,7 +8,8 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
             $http.get('/googleBooksApi/'+ isbn).then(function(response){
                 bookInfoFromApi.response = response.data;
                 console.log('book results: ', response.data);
-                $location.path("/bookResults");
+
+                $location.path('/bookResults');
             });
         },
     };
