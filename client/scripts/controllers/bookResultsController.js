@@ -2,11 +2,10 @@ myApp.controller('BookResultsController', ['$scope', '$http', '$location', 'User
   console.log('Book Results Controller loaded');
   $scope.logout = UserService.logout;
 
-  $scope.addBook = function(bookObject) {
-      console.log('Adding Book', bookObject);
-      var book = bookObject.name;
+  $scope.addBook = function(bookShelfObject) {
+      console.log('Adding Book Info: ', bookShelfObject);
+      var book = bookShelfObject;
 
-      // input post new ingredients when you post refresh dropdown ingredients
       $http.post('/myBookShelf', bookShelfObject).then(function(response){
         getBookShelf();
 
@@ -23,9 +22,6 @@ myApp.controller('BookResultsController', ['$scope', '$http', '$location', 'User
       });
     };
     getBookShelf();
-
-
-
 
   $scope.bookInfoFromApi = ApiService.bookInfoFromApi;
 

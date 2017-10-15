@@ -9,7 +9,7 @@ var MyBookShelfSchema = mongoose.Schema({
 
 var MyBookShelf = mongoose.model("MyBookShelf", MyBookShelfSchema);
 
-// GET Route to return all ingredients for the authenticated user
+// GET Route to return all books for the authenticated user
 
 router.get("/", function(req, res) {
 
@@ -23,7 +23,7 @@ router.get("/", function(req, res) {
         res.sendStatus(500);
       }
       res.send(allBooks);
-      console.log("response from allBooks", allBooks);
+      console.log("response from MyBookShelf", allBooks);
     });
   } else {
     console.log("not logged in");
@@ -33,7 +33,7 @@ router.get("/", function(req, res) {
 
 // POST Route to add book for the authenticated user
 router.post("/", function(req, res, next) {
-    console.log('POST',req.body);
+    console.log('POST', req.body);
     var bookToSave = {
       book : req.body.name,
       user_id : req.user._id
