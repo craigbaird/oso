@@ -10,7 +10,6 @@
                 <li><b>Authors:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.authors[0] }}</li>
                 <li><b>Description:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.description }}</li>
         </div>
-            <!-- <button class="btn btn primary" ng-click="addBook($scope.book)">Add to Bookshelf</button> -->
             <button class="btn btn primary" ng-click="addBook($scope.bookInfoFromApi.response)">Add to Bookshelf</button>
 
 </div>
