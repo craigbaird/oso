@@ -9,8 +9,6 @@ var MyBookShelfSchema = mongoose.Schema({
 
 var MyBookShelf = mongoose.model("MyBookShelf", MyBookShelfSchema);
 
-// GET Route to return all books for the authenticated user
-
 router.get("/", function(req, res) {
 
   if(req.isAuthenticated()) {
