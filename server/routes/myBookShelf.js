@@ -38,7 +38,7 @@ router.post("/", function(req, res, next) {
     };
 
     MyBookShelf.create(bookToSave, function(err, post) {
-         if(err) {
+         if (err) {
            res.sendStatus(500);
          } else {
           res.sendStatus(200);
