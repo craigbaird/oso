@@ -7,13 +7,13 @@ var MyBookShelfSchema = mongoose.Schema({
   'user_id': String
 });
 
-var MyBookShelf = mongoose.model("MyBookShelf", MyBookShelfSchema);
+var MyBookShelf = mongoose.model('MyBookShelf', MyBookShelfSchema);
 
-router.get("/", function(req, res) {
+router.get('/', function(req, res) {
 
   if(req.isAuthenticated()) {
     var user = req.user._id;
-    console.log("logged in with user", req.user._id);
+    console.log('logged in with user', req.user._id);
 
     MyBookShelf.find({user_id : user}, function(err, allBooks){
       if (err){
@@ -21,16 +21,16 @@ router.get("/", function(req, res) {
         res.sendStatus(500);
       }
       res.send(allBooks);
-      console.log("response from MyBookShelf", allBooks);
+      console.log('response from MyBookShelf', allBooks);
     });
   } else {
-    console.log("not logged in");
+    console.log('not logged in');
     res.send(false);
   }
 });
 
 // POST Route to add book for the authenticated user
-router.post("/", function(req, res, next) {
+router.post('/', function(req, res, next) {
     console.log('POST', req.body);
     var bookToSave = {
       book : req.body.name,
