@@ -3,14 +3,32 @@
     <h1>Book Results</h1>
         <div class="infoContainer">
                 <img class="image" ng-src="{{ bookInfoFromApi.response.items[0].volumeInfo.imageLinks.thumbnail }}"/>
+                <!-- <img class="image" ng-src="{{ bookInfoFromApi.response.items[0].volumeInfo.imageLinks.smallThumbnail }}"/> -->
             <ul>
+                <li><b>Allow Anon Logging:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.allowAnonLogging }}</li>
+                <li><b>Authors:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.authors[0] }}</li>
+                <li><b>Average Rating:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.averageRating }}</li>
+                <li><b>Canonical Volume Link:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.canonicalVolumeLink }}</li>
+                <li><b>Categories:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.categories[0] }}</li>
+                <li><b>Content Version:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.contentVersion }}</li>
+                <li><b>Description:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.description }}</li>
+                <li><b>Industry Identifiers:</b>
+                    <ul>
+                        <li><b>Identifier:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.industryIdentifiers[0].identifier }} </li>
+                        <li><b>Type:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.industryIdentifiers[0].type }} </li>
+                    </ul>
+                    <ul>
+                        <li><b>Identifier:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.industryIdentifiers[1].identifier }} </li>
+                        <li><b>Type:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.industryIdentifiers[1].type }} </li>
+                    </ul>
+                <li><b>Info Link:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.infoLink }}</li>
+                <!-- left off here -->
                 <li><b>Title:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.title }}</li>
                 <li><b>Page Count:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.pageCount }}</li>
                 <li><b>Published Date:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.publishedDate }}</li>
-                <li><b>Authors:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.authors[0] }}</li>
-                <li><b>Description:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.description }}</li>
+            </ul>
+
         </div>
-            <!-- <button class="btn btn primary" ng-click="addBook($scope.book)">Add to Bookshelf</button> -->
             <button class="btn btn primary" ng-click="addBook($scope.bookInfoFromApi.response)">Add to Bookshelf</button>
 
 </div>

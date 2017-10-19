@@ -15,7 +15,7 @@ var register = require('./routes/register');
 
 // Custom route includes
 var googleBooksApi = require('./routes/googleBooksApi');
-var myBookShelf = require('./routes/myBookShelf');
+// var myBookShelf = require('./routes/myBookShelf');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -43,7 +43,7 @@ app.use('/user', user);
 
 // Custom routes
 app.use('/googleBooksApi', googleBooksApi);
-app.use('/myBookShelf', myBookShelf);
+// app.use('/myBookShelf', myBookShelf);
 
 // Index route
 app.use('/', index);
