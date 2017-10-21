@@ -33,11 +33,11 @@
                 <li><b>Ratings Count:</b> {{ bookInfoFromApi.ratingsCount }} </li>
                 <li><b>Reading Modes:</b>
                     <ul>
-                        <li><b>Image:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.industryIdentifiers[0].readingModes.image }}
-                        <li><b>Text:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.industryIdentifiers[0].readingModes.text }}
+                        <li><b>Image:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.readingModes.image }}
+                        <li><b>Text:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.readingModes.text }}
                     </ul>
                 <li><b>Title:</b> {{ bookInfoFromApi.title }} </li>
             </ul>
         </div>
-            <button class="btn btn primary" ng-click="addBook($scope.bookInfoFromApi.response)">Add to Bookshelf</button>
+            <button class="btn btn primary" ng-click="addBook(bookInfoFromApi.response)">Add to Bookshelf</button>
 </div>
