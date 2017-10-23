@@ -2,26 +2,29 @@ myApp.controller('BookResultsController', ['$scope', '$http', '$location', 'User
   console.log('Book Results Controller loaded');
   $scope.logout = UserService.logout;
 
-  $scope.addBook = function(bookShelfObject) {
-      console.log('Sending Book Info To Database: ', bookShelfObject);
-    //   var book = bookShelfObject;
+  $scope.book = {}; // maybe?
 
-    //   $http.post('/myBookShelf', bookShelfObject).then(function(response){
+  $scope.addBook = function(bookShelfObject) {
+
+      console.log('Sending Book Info To Database: ', bookShelfObject);
+      // var book = bookShelfObject;
+
+      $http.post('/books', bookShelfObject).then(function(response){
     //     getBookShelf();
-      //
-    //     /////// ??? ///////
-    //     $scope.book.name = "";
-    //   });
+      console.log('hi');
+        $scope.book.name = "";
+        console.log($scope.book.name);
+      });
     };
 
-    // var getBookShelf = function() {
-    //   $http.get('/myBookShelf').then(function(response){
-    //     console.log("All Current Books: ", response);
-    //     $scope.list = response.data;
-    //      console.log(response.data);
-    //   });
-    // };
-    // getBookShelf();
+    var getBookShelf = function() {
+      $http.get('/books').then(function(response){
+        console.log("All Current Books: ", response);
+        $scope.list = response.data;
+         console.log(response.data);
+      });
+    };
+    getBookShelf();
 
   $scope.bookInfoFromApi = ApiService.bookInfoFromApi;
 
