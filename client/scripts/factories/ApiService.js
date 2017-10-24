@@ -17,7 +17,7 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
                 bookInfoFromApi.categories = response.data.items[0].volumeInfo.categories[0];
                 bookInfoFromApi.contentVersion = response.data.items[0].volumeInfo.contentVersion;
                 bookInfoFromApi.description = response.data.items[0].volumeInfo.description;
-                // industry identifiers go here
+                // Industry identifiers go here
                 bookInfoFromApi.infoLink = response.data.items[0].volumeInfo.infoLink;
                 bookInfoFromApi.language = response.data.items[0].volumeInfo.language;
                 bookInfoFromApi.pageCount = response.data.items[0].volumeInfo.pageCount;
@@ -27,9 +27,10 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
                 bookInfoFromApi.publishedDate = response.data.items[0].volumeInfo.publishedDate;
                 bookInfoFromApi.publisher = response.data.items[0].volumeInfo.publisher;
                 bookInfoFromApi.ratingsCount = response.data.items[0].volumeInfo.ratingsCount;
-                // reading modes go here
+                // Reading modes go here
                 bookInfoFromApi.title = response.data.items[0].volumeInfo.title;
 
+                // Redirect to Book Results page
                 $location.path('/bookResults');
             });
         },
