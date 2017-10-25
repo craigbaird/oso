@@ -2,8 +2,8 @@
     <div ng-include="'views/partials/header.html'"></div>
     <h1>Book Results</h1>
         <div class="infoContainer">
-                <img class="image" ng-src="{{ bookInfoFromApi.response.items[0].volumeInfo.imageLinks.thumbnail }}"/>
-                <!-- <img class="image" ng-src="{{ bookInfoFromApi.response.items[0].volumeInfo.imageLinks.smallThumbnail }}"/> -->
+                <img class="image" ng-src="{{ bookInfoFromApi.thumbnail }}"/>
+                <img class="image" ng-src="{{ bookInfoFromApi.smallThumbnail }}"/>
             <ul>
                 <li><b>Allow Anon Logging:</b> {{ bookInfoFromApi.allowAnonLogging }} </li>
                 <li><b>Authors:</b> {{ bookInfoFromApi.authors }} </li>

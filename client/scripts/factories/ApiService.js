@@ -10,6 +10,8 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
                 console.log('book results: ', response.data);
 
                 // Break the object into easier to read parts
+                bookInfoFromApi.thumbnail = response.data.items[0].volumeInfo.imageLinks.thumbnail;
+                bookInfoFromApi.smallThumbnail = response.data.items[0].volumeInfo.imageLinks.smallThumbnail;
                 bookInfoFromApi.allowAnonLogging = response.data.items[0].volumeInfo.allowAnonLogging;
                 bookInfoFromApi.authors = response.data.items[0].volumeInfo.authors[0];
                 bookInfoFromApi.averageRating = response.data.items[0].volumeInfo.averageRating;

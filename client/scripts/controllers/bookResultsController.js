@@ -7,11 +7,11 @@ myApp.controller('BookResultsController', ['$scope', '$http', '$location', 'User
   $scope.addBook = function(bookShelfObject) {
 
       console.log('Sending Book Info To Database: ', bookShelfObject);
-      // var book = bookShelfObject;
+      var title = bookShelfObject;
 
-      $http.post('/books', bookShelfObject).then(function(response){
-    //     getBookShelf();
-      console.log('hi');
+      $http.post('/books', title).then(function(response){
+        getBookShelf();
+        console.log('hi');
         $scope.book.name = "";
         console.log($scope.book.name);
       });

@@ -3,7 +3,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 
 var MyBookShelfSchema = mongoose.Schema({
-  'book': String,
+  'title': String,
   'user_id': String
 });
 
