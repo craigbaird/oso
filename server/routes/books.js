@@ -7,7 +7,7 @@ var MyBookShelfSchema = mongoose.Schema({
   'user_id': String
 });
 
-var MyBookShelf = mongoose.model('MyBookShelf', MyBookShelfSchema);
+var Books = mongoose.model('Books', MyBookShelfSchema);
 
 router.get('/', function(req, res) {
 
@@ -15,7 +15,7 @@ router.get('/', function(req, res) {
     var user = req.user._id;
     console.log('logged in with user', req.user._id);
 
-    MyBookShelf.find({user_id : user}, function(err, allBooks){
+    Books.find({user_id : user}, function(err, allBooks){
       if (err){
         console.log(err);
         res.sendStatus(500);
@@ -33,7 +33,7 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res, next) {
     console.log('POST', req.body);
     var bookToSave = {
-      book : req.body.name,
+      title : req.body.name,
       user_id : req.user._id
     };
 
