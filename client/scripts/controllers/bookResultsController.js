@@ -2,18 +2,23 @@ myApp.controller('BookResultsController', ['$scope', '$http', '$location', 'User
   console.log('Book Results Controller loaded');
   $scope.logout = UserService.logout;
 
-  $scope.book = {}; // maybe?
+  // $scope.book = {}; // maybe?
+  var book = {};
 
   $scope.addBook = function(bookShelfObject) {
 
       console.log('Sending Book Info To Database: ', bookShelfObject);
-      var title = bookShelfObject;
+      // var title = bookShelfObject;
+      book.title = bookShelfObject;
+      console.log('bookshelfobject =', book);
 
-      $http.post('/books', title).then(function(response){
+      $http.post('/books', book).then(function(response){
         getBookShelf();
         console.log('hi');
-        $scope.book.name = "";
-        console.log($scope.book.name);
+        // $scope.book.title = "";
+        book.title = "";
+        // console.log($scope.book.title);
+        console.log(book.title);
       });
     };
 

@@ -23,7 +23,8 @@ router.get('/', function(req, res) {
       res.send(allBooks);
       console.log('response from MyBookShelf', allBooks);
     });
-  } else {
+  }
+  else {
     console.log('not logged in');
     res.send(false);
   }
@@ -31,13 +32,15 @@ router.get('/', function(req, res) {
 
 // POST Route to add book for the authenticated user
 router.post('/', function(req, res, next) {
-    console.log('POST', req.body);
+    // console.log('POST', req.body);
+    console.log('POST', req.title);
     var bookToSave = {
-      title : req.body.name,
+      // title : req.body.title,
+      title : req.body.title,
       user_id : req.user._id
     };
 
-    MyBookShelf.create(bookToSave, function(err, post) {
+    Books.create(bookToSave, function(err, post) {
          if (err) {
            res.sendStatus(500);
          } else {
