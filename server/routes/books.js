@@ -4,6 +4,15 @@ var mongoose = require('mongoose');
 
 var MyBookShelfSchema = mongoose.Schema({
   'title': String,
+  'authors': String,
+  'categories': String,
+  'description': String,
+  'isbn10': String,
+  'isbn13': String,
+  'language': String,
+  'page_count': String,
+  'published_date': String,
+  'publisher': String,
   'user_id': String
 });
 
@@ -30,13 +39,19 @@ router.get('/', function(req, res) {
   }
 });
 
-// POST Route to add book for the authenticated user
 router.post('/', function(req, res, next) {
-    // console.log('POST', req.body);
-    console.log('POST', req.title);
+    console.log('POST', req.body);
     var bookToSave = {
-      // title : req.body.title,
       title : req.body.title,
+      authors: req.body.authors,
+      categories: req.body.categories,
+      description: req.body.description,
+      isbn10: req.body.isbn10,
+      isbn13: req.body.isbn13,
+      language: req.body.language,
+      page_count: req.body.page_count,
+      published_date: req.body.published_date,
+      publisher: req.body.publisher,
       user_id : req.user._id
     };
 

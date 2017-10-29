@@ -20,6 +20,8 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
                 bookInfoFromApi.contentVersion = response.data.items[0].volumeInfo.contentVersion;
                 bookInfoFromApi.description = response.data.items[0].volumeInfo.description;
                 // Industry identifiers go here
+                bookInfoFromApi.isbn10 = response.data.items[0].volumeInfo.industryIdentifiers[0].identifier;
+                bookInfoFromApi.isbn13 = response.data.items[0].volumeInfo.industryIdentifiers[1].identifier;
                 bookInfoFromApi.infoLink = response.data.items[0].volumeInfo.infoLink;
                 bookInfoFromApi.language = response.data.items[0].volumeInfo.language;
                 bookInfoFromApi.pageCount = response.data.items[0].volumeInfo.pageCount;
