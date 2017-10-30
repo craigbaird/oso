@@ -5,10 +5,9 @@ myApp.controller('BookResultsController', ['$scope', '$http', '$location', 'User
 
   $scope.addBook = function(bookInfoFromApi) {
       book = bookInfoFromApi;
-      // console.log('Sending This Book Info To Database: ', book);
 
       $http.post('/books', book).then(function(response){
-        console.log('Book Info Sent to Database', book);
+        console.log('Book Info Sent to Database');
         getBookShelf();
         book = '';
       });
@@ -16,7 +15,7 @@ myApp.controller('BookResultsController', ['$scope', '$http', '$location', 'User
 
     var getBookShelf = function() {
       $http.get('/books').then(function(response){
-        console.log("All Books In Database: ", response);
+        console.log("All Books In Database: ", response.data);
         $scope.list = response.data;
       });
     };

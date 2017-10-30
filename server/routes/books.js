@@ -3,7 +3,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 
 var MyBookShelfSchema = mongoose.Schema({
-  'smallThumbnail': String,
+  'small_thumbnail': String,
   'thumbnail': String,
   'title': String,
   'authors': String,
@@ -44,7 +44,7 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res, next) {
     console.log('POST', req.body);
     var bookToSave = {
-      small_thumnail: req.body.smallThumbnail,
+      small_thumbnail: req.body.smallThumbnail,
       thumbnail: req.body.thumbnail,
       title : req.body.title,
       authors: req.body.authors,
