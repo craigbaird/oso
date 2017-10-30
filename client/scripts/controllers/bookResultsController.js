@@ -15,7 +15,7 @@ myApp.controller('BookResultsController', ['$scope', '$http', '$location', 'User
 
     var getBookShelf = function() {
       $http.get('/books').then(function(response){
-        console.log("All Books In Database: ", response.data);
+        console.log('All Books In Database: ', response.data);
         $scope.list = response.data;
       });
     };

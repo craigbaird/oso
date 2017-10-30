@@ -1,19 +1,15 @@
 <div ng-include="'views/partials/header.html'"></div>
 
 <div class="container">
-  <div layout="column" layout-align="center center" style="min-height: 300px;" class="selectdemoValidations">
+  <div layout="column" layout-align="center center" class="selectdemoValidations">
     <h2 class="registerUser">Register User</h2>
     <!-- <h4 class="alert" role="alert" ng-if="message != ''">{{message}}</h4> -->
 
   <form ng-submit="registerUser()">
-    <div layout="row">
         <label for="username">Username:</label>
         <input type="text" ng-model="user.username"/>
-    </div>
-    <div layout="row">
         <label for="password">Password:</label>
         <input type="password" ng-model="user.password"/>
-    </div>
     <button class="btn btn-primary" type="submit">Register</button>
     <a href="#home">Cancel</a>
   </form>
