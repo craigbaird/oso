@@ -7,7 +7,7 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
         //   console.log('in getBooks function in ApiService.js', isbn);
             $http.get('/googleBooksApi/'+ isbn).then(function(response){
                 bookInfoFromApi.response = response.data;
-                console.log('book results: ', response.data);
+                console.log('Book Results From API: ', response.data);
 
                 // Break the object into easier to read parts
                 bookInfoFromApi.thumbnail = response.data.items[0].volumeInfo.imageLinks.thumbnail;

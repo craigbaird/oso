@@ -1,6 +1,7 @@
 <div layout="column" layout-align="center center">
     <div ng-include="'views/partials/header.html'"></div>
     <h1>Book Results</h1>
+    <!-- FIGURE OUT NG IFS -->
         <div class="infoContainer">
                 <img class="image" ng-if="bookInfoFromApi.thumbnail" ng-src="{{ bookInfoFromApi.thumbnail }}"/>
                 <img class="image" ng-if="bookInfoFromApi.smallThumbnail" ng-src="{{ bookInfoFromApi.smallThumbnail }}"/>
@@ -17,14 +18,14 @@
                         <li><b>1.</b></li>
                           <ul>
                             <li><b>Identifier:</b> {{ bookInfoFromApi.isbn10 }} </li>
-                            <li ng-if="bookInfoFromApi.response.items[0].volumeInfo.industryIdentifiers[0].type !== undefined"><b>Type:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.industryIdentifiers[0].type }} </li>
+                            <li ng-if="bookInfoFromApi.response.items[0].volumeInfo.industryIdentifiers[0].type"><b>Type:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.industryIdentifiers[0].type }} </li>
                           </ul>
                     </ul>
                     <ul>
                         <li><b>2.</b></li>
                           <ul>
                             <li><b>Identifier:</b> {{ bookInfoFromApi.isbn13 }} </li>
-                            <li ng-if="bookInfoFromApi.response.items[0].volumeInfo.industryIdentifiers[1].type !== undefined"><b>Type:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.industryIdentifiers[1].type }} </li>
+                            <li ng-if="bookInfoFromApi.response.items[0].volumeInfo.industryIdentifiers[1].type"><b>Type:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.industryIdentifiers[1].type }} </li>
                           </ul>
                     </ul>
                 <li><b>Info Link:</b> {{ bookInfoFromApi.infoLink }} </li>
