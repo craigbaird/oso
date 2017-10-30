@@ -1,6 +1,19 @@
 myApp.factory('ApiService', ['$http', '$location', function($http, $location){
   // console.log('Api Service Loaded');
     var bookInfoFromApi = {};
+
+// break data object below into functions
+    // function formatLabel(fieldName){
+    //   return fieldName.toUpperCase()
+    // }
+    //
+    // function parseResults(obj){
+    //   var fields = ["thumbnail", "small_thumbnail"]
+    //   var results = {};
+    //   var display = {id: 1, label: formatLabel(field[i]), data: result[i]};
+    //
+    // }
+
     return {
         bookInfoFromApi : bookInfoFromApi,
         getBooks : function(isbn){
@@ -8,7 +21,7 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
             $http.get('/googleBooksApi/'+ isbn).then(function(response){
                 bookInfoFromApi.response = response.data;
                 console.log('Book Results From API: ', response.data);
-
+                // ForEach
                 // Break the object into easier to read parts
                 bookInfoFromApi.thumbnail = response.data.items[0].volumeInfo.imageLinks.thumbnail;
                 bookInfoFromApi.smallThumbnail = response.data.items[0].volumeInfo.imageLinks.smallThumbnail;

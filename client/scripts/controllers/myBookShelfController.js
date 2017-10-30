@@ -1,4 +1,4 @@
-myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'UserService', 'ApiService', function($scope, $http, $location, UserService, ApiService) {
+myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'UserService', 'ApiService', 'MyBookShelfService', function($scope, $http, $location, UserService, ApiService, MyBookShelfService) {
   // console.log('MyBookShelfController loaded');
   $scope.logout = UserService.logout;
 
@@ -11,5 +11,4 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
   };
 
   $scope.bookToSearch = ApiService.bookToSearch;
-
 }]);

@@ -2,6 +2,9 @@
     <div ng-include="'views/partials/header.html'"></div>
     <h1>Book Results</h1>
     <!-- FIGURE OUT NG IFS -->
+
+      <!-- ng-each -->
+       <!-- look up angular directives -->
         <div class="infoContainer">
                 <img class="image" ng-if="bookInfoFromApi.thumbnail" ng-src="{{ bookInfoFromApi.thumbnail }}"/>
                 <img class="image" ng-if="bookInfoFromApi.smallThumbnail" ng-src="{{ bookInfoFromApi.smallThumbnail }}"/>

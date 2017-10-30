@@ -24,7 +24,7 @@ router.get('/', function(req, res) {
 
   if(req.isAuthenticated()) {
     var user = req.user._id;
-    console.log('logged in with user', req.user._id);
+    // console.log('logged in with user', req.user._id);
 
     Books.find({user_id : user}, function(err, allBooks){
       if (err){
@@ -32,7 +32,7 @@ router.get('/', function(req, res) {
         res.sendStatus(500);
       }
       res.send(allBooks);
-      console.log('response from MyBookShelf', allBooks);
+      // console.log('response from MyBookShelf', allBooks);
     });
   }
   else {
@@ -42,7 +42,7 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', function(req, res, next) {
-    console.log('POST', req.body);
+    // console.log('POST', req.body);
     var bookToSave = {
       small_thumbnail: req.body.smallThumbnail,
       thumbnail: req.body.thumbnail,
