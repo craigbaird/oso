@@ -7,6 +7,9 @@ router.get('/:isbn', function(req, res){
     // console.log('in googleBooksApi.js');
     var isbn = req.params.isbn;
     var url = 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn;
+    var title = req.params.title;
+    // var url = 'https://www.googleapis.com/books/v1/volumes?q=' + title;
+
     var body = '';
         https.get(url, function (result){
             result.setEncoding('utf8');
