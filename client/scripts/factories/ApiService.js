@@ -30,7 +30,7 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
                   console.log('element', element);
                 });
 
-                
+
                 // ForEach
                 // Break the object into easier to read parts
                 bookInfoFromApi.thumbnail = response.data.items[0].volumeInfo.imageLinks.thumbnail;
@@ -62,6 +62,5 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
             });
         },
     };
-
 
 }]);
