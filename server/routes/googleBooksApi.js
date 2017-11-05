@@ -18,7 +18,7 @@ router.get('/:isbn', function(req, res){
             });
             result.on('end', function() {
                 body = JSON.parse(body);
-                // console.log('object from api to send', body);
+                console.log('object from api to send', body);
     res.send(body);
             });
         });
