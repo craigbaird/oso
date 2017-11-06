@@ -20,15 +20,30 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
         //   console.log('in getBooks function in ApiService.js', isbn);
             $http.get('/googleBooksApi/'+ isbn).then(function(response){
                 bookInfoFromApi.response = response.data;
-                // console.log('Book Results From API: ', response.data);
+                console.log('Book Results From API: ', response.data.items);
 
 
                 // TRYING THIS
-                var arr = [response.data.items];
+                // var arr = [response.data.items];
+                //
+                // arr.forEach(function(element) {
+                //   console.log('element', element);
+                // });
 
-                arr.forEach(function(element) {
-                  console.log('element', element);
-                });
+
+                // var items = response.data.items[0].volumeInfo;
+                //   for (var item in items) {
+                //     bookInfoFromApi.item = item;
+                //     // console.log (item);
+                //     console.log(bookInfoFromApi.item);
+                //   }
+
+
+                // let items  = response.data.items[0].volumeInfo;
+                //
+                // items.forEach(function(element) {
+                //   console.log(element);
+                // });
 
 
                 // ForEach

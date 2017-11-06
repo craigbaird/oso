@@ -1,7 +1,7 @@
 {
-  "name": "mean_env",
+  "name": "one_shelf_over",
   "version": "1.0.0",
-  "description": "Basic Environment Setup for MEAN projects",
+  "description": "",
   "main": "Gruntfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -24,5 +24,12 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^8.0.0",
+    "grunt-browserify": "^5.2.0"
   }
 }
