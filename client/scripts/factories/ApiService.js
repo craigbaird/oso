@@ -1,6 +1,7 @@
 myApp.factory('ApiService', ['$http', '$location', function($http, $location){
   // console.log('Api Service Loaded');
     var bookInfoFromApi = {};
+    var bookInfo = [];
 
 // break data object below into functions
     // function formatLabel(fieldName){
@@ -31,12 +32,11 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
                 // });
 
 
-                // var items = response.data.items[0].volumeInfo;
-                //   for (var item in items) {
-                //     bookInfoFromApi.item = item;
-                //     // console.log (item);
-                //     console.log(bookInfoFromApi.item);
-                //   }
+                var items = response.data.items[0].volumeInfo;
+                  for (var item in items) {
+                    bookInfo.push(item);
+                  }
+                  console.log(bookInfo);
 
 
                 // let items  = response.data.items[0].volumeInfo;
