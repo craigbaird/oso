@@ -10,5 +10,13 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
       ApiService.getBooks(isbn);
   };
 
+  getBookShelf();
+  var getBookShelf = function() {
+    $http.get('./books').then(function(response){
+      $scope.list = response.data;
+      console.log(response.data);
+    });
+  };
+
   $scope.bookToSearch = ApiService.bookToSearch;
 }]);

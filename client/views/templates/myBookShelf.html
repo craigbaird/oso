@@ -2,7 +2,7 @@
 
 <a href="#/mainPage"><button class="btn btn-primary"> < go back </button></a>
 <div class="container">
-  <div layout="column" layout-align="center center">
+  <div layout="column">
 
     <h2>My Book Shelf</h2>
 
@@ -11,5 +11,8 @@
       <input ng-model="bookToSearch.name">
     </div>
     <button class="btn btn-primary" ng-click="findBook()">Submit</button>
+    <div class="currentBookShelf">
+      <p ng-repeat="book in $scope.list"></p>
+    </div>
   </div>
 </div>
