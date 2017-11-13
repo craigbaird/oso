@@ -2,7 +2,7 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
   // console.log('MyBookShelfController loaded');
   $scope.logout = UserService.logout;
 
-  var bookShelf = {};
+  $scope.bookShelf = {};
 
   $scope.findBook = function() {
       // var isbn is the input from user in the search field and the only accepted way to search
@@ -12,14 +12,19 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
       ApiService.getBooks(isbn);
   };
 
-  displayBookShelf();
-  var displayBookShelf = function() {
-    $http.get('/books').then(function(response){
-      console.log('all current books: ', response.data);
-      bookShelf.list = response.data;
-      console.log(response.data);
-    });
-  };
+displayBooks();
+$scope.displayBooks = function() {
+  console.log('in displayBooks');
+  MyBookShelfService.currentBooks();
+};
+
+  // var getBookShelf = function() {
+  //   $http.get('/books').then(function(response){
+  //     console.log('All Books In Database: ', response.data);
+  //     $scope.list = response.data;
+  //   });
+  // };
+  // getBookShelf();
 
   $scope.bookToSearch = ApiService.bookToSearch;
 }]);

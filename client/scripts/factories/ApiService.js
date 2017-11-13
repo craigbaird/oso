@@ -25,28 +25,27 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
 
 
                 // TRYING THIS
+                // var items = response.data.items[0].volumeInfo;
+                //   for (var item in items) {
+                //     bookInfo.push(item);
+                //   }
+                //   console.log(bookInfo);
+
+                // AND THIS
                 // var arr = [response.data.items];
                 //
                 // arr.forEach(function(element) {
                 //   console.log('element', element);
                 // });
 
-
-                var items = response.data.items[0].volumeInfo;
-                  for (var item in items) {
-                    bookInfo.push(item);
-                  }
-                  console.log(bookInfo);
-
-
+                // AND THIS
                 // let items  = response.data.items[0].volumeInfo;
                 //
                 // items.forEach(function(element) {
                 //   console.log(element);
                 // });
+                
 
-
-                // ForEach
                 // Break the object into easier to read parts
                 bookInfoFromApi.thumbnail = response.data.items[0].volumeInfo.imageLinks.thumbnail;
                 bookInfoFromApi.smallThumbnail = response.data.items[0].volumeInfo.imageLinks.smallThumbnail;

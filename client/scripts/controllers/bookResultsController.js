@@ -8,18 +8,18 @@ myApp.controller('BookResultsController', ['$scope', '$http', '$location', 'User
 
       $http.post('/books', book).then(function(response){
         console.log('Book Info Sent to Database');
-        getBookShelf();
+        // getBookShelf();
         book = '';
       });
     };
 
-    var getBookShelf = function() {
-      $http.get('/books').then(function(response){
-        console.log('All Books In Database: ', response.data);
-        $scope.list = response.data;
-      });
-    };
-    getBookShelf();
+    // var getBookShelf = function() {
+    //   $http.get('/books').then(function(response){
+    //     console.log('All Books In Database: ', response.data);
+    //     $scope.list = response.data;
+    //   });
+    // };
+    // getBookShelf();
 
   $scope.bookInfoFromApi = ApiService.bookInfoFromApi;
 
