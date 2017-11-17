@@ -1,7 +1,6 @@
 myApp.factory('ApiService', ['$http', '$location', function($http, $location){
-  // console.log('Api Service Loaded');
-    var bookInfoFromApi = {};
-    var bookInfo = [];
+  var bookInfoFromApi = {};
+  var bookInfo = [];
 
 // break data object below into functions
     // function formatLabel(fieldName){
@@ -44,7 +43,7 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
                 // items.forEach(function(element) {
                 //   console.log(element);
                 // });
-                
+
 
                 // Break the object into easier to read parts
                 bookInfoFromApi.thumbnail = response.data.items[0].volumeInfo.imageLinks.thumbnail;

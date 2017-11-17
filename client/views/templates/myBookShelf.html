@@ -2,20 +2,22 @@
 
 <a href="#/mainPage"><button class="btn btn-primary"> < go back </button></a>
 <div class="container">
-  <div layout="column">
-
-    <h2>My Book Shelf</h2>
-
-    <div layout="row">
+  <div layout="row">
+    <div layout="column">
       <label>Search For Book</label>
       <input ng-model="bookToSearch.name">
+      <button class="btn btn-primary" ng-click="findBook()">Search</button>
     </div>
-    <button class="btn btn-primary" ng-click="findBook()">Submit</button>
+
     <div class="currentBookShelf">
       <h2>My Books</h2>
-      <ul>
-        <li ng-repeat="book in bookShelf.list">{{ bookShelf.list }}</li>
-      </ul>
+        <div ng-repeat="book in bookShelf.list">
+          <ul>
+            <li ng-repeat="(key, value) in book">
+              <b>{{ key }}</b> : {{ value }}
+            </li>
+          </ul>
+        </div>
     </div>
   </div>
 </div>

@@ -1,20 +1,7 @@
 module.exports = function(grunt){
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    // browserify: {
-    //     dist: {
-    //         files: {
-    //             // destination for transpiled js : source js
-    //             'dist/myproject.js': 'src/index.es6'
-    //         },
-    //         options: {
-    //             transform: [['babelify', { presets: "es2015" }]],
-    //             browserifyOptions: {
-    //                 debug: true
-    //             }
-    //         }
-    //     }
-    // },
+
     uglify: {
       build: {
         src: ['client/scripts/*.js',
@@ -61,7 +48,6 @@ module.exports = function(grunt){
     }
   });
 
-  // grunt.loadNpmTasks('browserify:dist');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
