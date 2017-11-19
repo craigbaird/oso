@@ -9,3 +9,9 @@ a {
     width: auto;
     background-color: lightgrey;
 }
+.category {
+  background-color: lightgrey;
+  height: 300px;
+  margin: 10px;
+
+}
