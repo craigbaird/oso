@@ -3,7 +3,7 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
   $scope.bookShelf = {};
 
   MyBookShelfService.getBookShelf();
-  console.log('my bookshelf is awesome and is: ', MyBookShelfService.bookShelf);
+  
   $scope.findBook = function() {
       // var isbn is the input from user in the search field and the only accepted way to search
       // will need to add a way to allow for other input types

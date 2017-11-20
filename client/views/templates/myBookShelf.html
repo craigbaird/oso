@@ -12,11 +12,12 @@
     <div class="currentBookShelf">
       <h2>My Books</h2>
         <div ng-repeat="book in bookShelf.list">
-          <ul>
+          <ul class="book">
             <li ng-repeat="(key, value) in book">
               <b>{{ key }}:</b> {{ value }}
             </li>
           </ul>
+          <br>
         </div>
     </div>
   </div>

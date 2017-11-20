@@ -13,5 +13,10 @@ a {
   background-color: lightgrey;
   height: 300px;
   margin: 10px;
+  border-radius: 10px;
 
+}
+.book {
+  background-color: lightgrey;
+  border-radius: 10px;
 }
