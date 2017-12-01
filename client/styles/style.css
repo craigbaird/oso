@@ -20,3 +20,6 @@ a {
   background-color: lightgrey;
   border-radius: 10px;
 }
+.bookList {
+  list-style-type: none;
+}

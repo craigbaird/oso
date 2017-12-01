@@ -15,7 +15,8 @@ var MyBookShelfSchema = mongoose.Schema({
   'page_count': String,
   'published_date': String,
   'publisher': String,
-  'user_id': String
+  'user_id': String,
+  'comments': String
 });
 
 var Books = mongoose.model('Books', MyBookShelfSchema);
@@ -24,7 +25,6 @@ router.get('/', function(req, res) {
 
   if(req.isAuthenticated()) {
     var user = req.user._id;
-    // console.log('logged in with user', req.user._id);
 
     Books.find({user_id : user}, function(err, allBooks){
       if (err){
@@ -32,7 +32,6 @@ router.get('/', function(req, res) {
         res.sendStatus(500);
       }
       res.send(allBooks);
-      // console.log('response from MyBookShelf', allBooks);
     });
   }
   else {
@@ -42,11 +41,10 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', function(req, res, next) {
-    // console.log('POST', req.body);
     var bookToSave = {
+      title : req.body.title,
       small_thumbnail: req.body.smallThumbnail,
       thumbnail: req.body.thumbnail,
-      title : req.body.title,
       authors: req.body.authors,
       categories: req.body.categories,
       description: req.body.description,
@@ -56,7 +54,8 @@ router.post('/', function(req, res, next) {
       page_count: req.body.pageCount,
       published_date: req.body.publishedDate,
       publisher: req.body.publisher,
-      user_id : req.user._id
+      user_id : req.user._id,
+      comments: null
     };
 
     Books.create(bookToSave, function(err, post) {
