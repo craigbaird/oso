@@ -13,6 +13,7 @@
 
        <div class = "container">
          <h1>Book Results</h1>
+         <h2 class="title">{{ bookInfoFromApi.title }} </h2>
          <div class="infoContainer" class="col">
                   <img class="image" ng-if="bookInfoFromApi.thumbnail" ng-src="{{ bookInfoFromApi.thumbnail }}"/>
                   <img class="image" ng-if="bookInfoFromApi.smallThumbnail" ng-src="{{ bookInfoFromApi.smallThumbnail }}"/>
@@ -54,7 +55,6 @@
                           <li><b>Image:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.readingModes.image }}
                           <li><b>Text:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.readingModes.text }}
                       </ul>
-                  <li><b>Title:</b> {{ bookInfoFromApi.title }} </li>
               </ul>
           </div>
 
