@@ -55,7 +55,7 @@ router.post('/', function(req, res, next) {
       published_date: req.body.publishedDate,
       publisher: req.body.publisher,
       user_id : req.user._id,
-      comments: null
+      comments: 'none'
     };
 
     Books.create(bookToSave, function(err, post) {
