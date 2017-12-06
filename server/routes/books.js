@@ -58,6 +58,14 @@ router.post('/', function(req, res, next) {
       comments: 'none'
     };
 
+    // router.delete will go here
+    //
+    //
+    //
+    //
+    //
+    //
+
     Books.create(bookToSave, function(err, post) {
          if (err) {
            res.sendStatus(500);
