@@ -59,12 +59,13 @@ router.post('/', function(req, res, next) {
     };
 
     // router.delete will go here
-    //
-    //
-    //
-    //
-    //
-    //
+    // router.deleteOne('/', function (req, res, next) {
+    //   db.collection("customers").deleteOne(myquery, function(err, obj) {
+    //     if (err) throw err;
+    //     console.log("1 document deleted");
+    //     db.close();
+    //   });
+    // });
 
     Books.create(bookToSave, function(err, post) {
          if (err) {
