@@ -58,6 +58,15 @@ router.post('/', function(req, res, next) {
       comments: 'none'
     };
 
+
+
+
+    // router.put will go here
+    // for updating notes
+
+
+
+
     // router.delete will go here
     // router.deleteOne('/', function (req, res, next) {
     //   db.collection("customers").deleteOne(myquery, function(err, obj) {
@@ -66,6 +75,26 @@ router.post('/', function(req, res, next) {
     //     db.close();
     //   });
     // });
+
+
+
+
+
+    // router.delete('/:_id', function (req,res){
+    //   console.log(req.params._id);
+    //   Books.findByIdAndRemove((req.params._id), function (err, allBooks){
+    //     if (err) {
+    //       console.log("mongo error: ", err);
+    //       sendStatus(500);
+    //     }
+    //     res.sendStatus(200);
+    //   });
+    // });
+
+
+
+
+
 
     Books.create(bookToSave, function(err, post) {
          if (err) {
