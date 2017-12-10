@@ -14,7 +14,6 @@ myApp.factory('MyBookShelfService', ['$http', '$location', function($http, $loca
           // console.log('All Books In Database: ', response.data);
           bookShelf.list = response.data;
           console.log('books on bookshelf ', bookShelf.list);
-
         });
       }
     };

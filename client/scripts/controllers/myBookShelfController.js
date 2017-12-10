@@ -11,10 +11,13 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
       ApiService.getBooks(isbn);
   };
 
+  // FIX THIS
   $scope.deleteBook = function(){
+    var isbnIdentifier = $scope.bookShelf.list;
     console.log('deleteBook button clicked');
+    console.log('the isbn of this book is: ', isbnIdentifier);
   };
 
-  $scope.bookShelf = MyBookShelfService.bookShelf;
   $scope.bookToSearch = ApiService.bookToSearch;
+  $scope.bookShelf = MyBookShelfService.bookShelf;
 }]);
