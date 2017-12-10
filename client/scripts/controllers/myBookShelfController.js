@@ -1,6 +1,7 @@
 myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'UserService', 'ApiService', 'MyBookShelfService', function($scope, $http, $location, UserService, ApiService, MyBookShelfService) {
   $scope.logout = UserService.logout;
   $scope.bookShelf = {};
+  var bookToDelete;
 
   MyBookShelfService.getBookShelf();
 
@@ -12,10 +13,10 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
   };
 
   // FIX THIS
-  $scope.deleteBook = function(){
-    var isbnIdentifier = $scope.bookShelf.list;
-    console.log('deleteBook button clicked');
-    console.log('the isbn of this book is: ', isbnIdentifier);
+  $scope.deleteBook = function(book){
+    bookToDelete = book;
+    console.log('the book object to delete is: ', bookToDelete);
+    MyBookShelfService.deleteBook(bookToDelete);
   };
 
   $scope.bookToSearch = ApiService.bookToSearch;
