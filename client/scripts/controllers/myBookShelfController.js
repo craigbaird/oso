@@ -12,6 +12,10 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
       ApiService.getBooks(isbn);
   };
 
+  $scope.editComments = function() {
+    console.log("Edit notes clicked");
+  };
+
   // FIX THIS
   $scope.deleteBook = function(book){
     bookToDelete = book;

@@ -16,6 +16,7 @@
             <li class="bookList" ng-repeat="(key, value) in book">
               <b>{{ key }}:</b> {{ value }}
             </li>
+            <button class="btn btn-primary" ng-click="editComments()">Edit Comments</button>
             <button class="btn btn-primary" ng-click="deleteBook(book)">Delete Book</button>
           </ul>
           <br>
