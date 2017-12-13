@@ -2,13 +2,33 @@ myApp.factory('MyBookShelfService', ['$http', '$location', function($http, $loca
     var bookShelf = {};
     var bookToDelete = {};
 
-    // deleteBook = function(bookObject) {
+    // DELETE BOOK FUNCTIONALITY
     // var deleteBook = function(object) {
     //     console.log('object to delete', bookObject);
     //     $http.delete('/' + object.id).then(function(response){
     //       bookSubmit();
     //     });
     //   };
+
+    // EDIT BOOK FUNCTIONALITY
+    // router.put("/", function(req, res) {
+    // console.log(req.body);
+    // var comment = req.body;
+    // Book.findById(req.body.id, function(err, foundBook) {
+    //   if (err) {
+    //     console.log(err);
+    //     res.sendStatus(500);
+    //   }
+    //   foundBook.comments = req.body.comments;
+    //
+    //   foundBook.save(function(err, savedBook){
+    //     if (err){
+    //       console.log(err);
+    //       res.sendStatus(500);
+    //     }
+    //     res.send(savedBook);
+    //   });
+    // });
 
     return {
       bookShelf: bookShelf,
