@@ -59,11 +59,24 @@ router.post('/', function(req, res, next) {
     };
 
 
-
-
-    // router.put will go here
-    // for updating notes
-
+  // router.put("/", function(req, res){
+  //   console.log(req.body);
+  //   var book = req.body;
+  //   Book.findById(req.body.id, function(err, foundBook){
+  //     if (err) {
+  //       console.log(err);
+  //       res.sendStatus(500);
+  //     }
+  //     foundBook.comments = req.body.comments;
+  //
+  //     foundBook.save(function(err, savedBook){
+  //       if (err){
+  //         console.log(err);
+  //         res.sendStatus(500);
+  //       }
+  //       res.send(savedBook);
+  //     });
+  //   });
 
 
 
