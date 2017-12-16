@@ -22,10 +22,8 @@ var MyBookShelfSchema = mongoose.Schema({
 var Books = mongoose.model('Books', MyBookShelfSchema);
 
 router.get('/', function(req, res) {
-
   if(req.isAuthenticated()) {
     var user = req.user._id;
-
     Books.find({user_id : user}, function(err, allBooks){
       if (err){
         console.log(err);
@@ -57,6 +55,14 @@ router.post('/', function(req, res, next) {
       user_id : req.user._id,
       comments: 'none'
     };
+    Books.create(bookToSave, function(err, post) {
+         if (err) {
+           res.sendStatus(500);
+         } else {
+          res.sendStatus(200);
+         }
+    });
+});
 
 
   // router.put("/", function(req, res){
@@ -77,45 +83,18 @@ router.post('/', function(req, res, next) {
   //       res.send(savedBook);
   //     });
   //   });
+  // });
 
-
-
-    // router.delete will go here
-    // router.deleteOne('/', function (req, res, next) {
-    //   db.collection("customers").deleteOne(myquery, function(err, obj) {
-    //     if (err) throw err;
-    //     console.log("1 document deleted");
-    //     db.close();
-    //   });
-    // });
-
-
-
-
-
-    // router.delete('/:_id', function (req,res){
-    //   console.log(req.params._id);
-    //   Books.findByIdAndRemove((req.params._id), function (err, allBooks){
-    //     if (err) {
-    //       console.log("mongo error: ", err);
-    //       sendStatus(500);
-    //     }
-    //     res.sendStatus(200);
-    //   });
-    // });
-
-
-
-
-
-
-    Books.create(bookToSave, function(err, post) {
-         if (err) {
-           res.sendStatus(500);
-         } else {
-          res.sendStatus(200);
-         }
+    router.delete('/:_id', function (req,res){
+      console.log(req.params._id);
+      Books.findByIdAndRemove((req.params._id), function (err, allBooks){
+        if (err) {
+          console.log("mongo error: ", err);
+          sendStatus(500);
+        }
+        res.sendStatus(200);
+      });
     });
-});
+
 
 module.exports = router;

@@ -9,43 +9,46 @@ myApp.factory('MyBookShelfService', ['$http', '$location', function($http, $loca
     //       bookSubmit();
     //     });
     //   };
+    let getBookShelf = (object) => {
+      $http.get('/books').then(function(response) {
+        bookShelf.list = response.data;
+      });
+    };
 
-    // EDIT BOOK FUNCTIONALITY
-    // router.put("/", function(req, res) {
-    // console.log(req.body);
-    // var comment = req.body;
-    // Book.findById(req.body.id, function(err, foundBook) {
-    //   if (err) {
-    //     console.log(err);
-    //     res.sendStatus(500);
-    //   }
-    //   foundBook.comments = req.body.comments;
+    // let editComment = (object) => {
+    //   $http.put('/books').then(function(response) {
     //
-    //   foundBook.save(function(err, savedBook){
-    //     if (err){
-    //       console.log(err);
-    //       res.sendStatus(500);
-    //     }
-    //     res.send(savedBook);
     //   });
-    // });
+    // };
+
+    let deleteBook = (object) => {
+      $http.delete('/books').then(function(response) {
+        console.log("deleted!")
+      });
+    };
 
     return {
-      bookShelf: bookShelf,
-      bookToDelete: bookToDelete,
-      getBookShelf: function(){
-        $http.get('/books').then(function(response){
-          // console.log('All Books In Database: ', response.data);
-          bookShelf.list = response.data;
-          console.log('books on bookshelf ', bookShelf.list);
-        });
-      },
-      deleteBook: function(bookObject){
-        // $http.delete('/' + object.id).then(function(response){
-        // FINISH THIS SECTION
-        console.log('in deleteBook function');
-        // });
-      }
+      getBookShelf,
+      deleteBook
     };
+
+    // return {
+    //   bookShelf: bookShelf,
+    //   bookToDelete: bookToDelete,
+    //   getBookShelf: function(){
+    //     $http.get('/books').then(function(response){
+    //       // console.log('All Books In Database: ', response.data);
+    //       bookShelf.list = response.data;
+    //       console.log('books on bookshelf ', bookShelf.list);
+    //     });
+    //   },
+    //   deleteBook: function(bookObject){
+    //     // $http.delete('/' + object.id).then(function(response){
+    //     // FINISH THIS SECTION
+    //     console.log('in deleteBook function');
+    //     // });
+    //   }
+    // };
+
 
 }]);
