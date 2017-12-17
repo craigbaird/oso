@@ -4,49 +4,36 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserServic
       username: '',
       password: ''
     };
-    // $scope.message = '';
 
     $scope.login = function() {
       if($scope.user.username === '' || $scope.user.password === '') {
-        // $scope.message = 'Please enter your username and password';
-        // alert(
-        //   'You forgot to enter something in. Please enter your username and password.'
-        // );
-
         swal(
-          'You forgot to enter something in. Please enter your username and password.'
+          'Oops!',
+          'You forgot to enter something in',
+          'Please enter your username and password.'
         );
-
       } else {
-        $http.post('/', $scope.user).then(function(response) {
-          if(response.data.username) {
-            // console.log('success: ', response.data);
-            $location.path('/user');
-          } else {
-            // console.log('failure: ', response);
-            // $scope.message = 'Your username/password was incorrect. Please try again.';
-            // alert(
-            //   'Your username or password was incorrect. Please try again.'
-            // );
-
-            swal(
-              'Your username or password was incorrect. Please try again.'
-            );
-
-          }
-        });
+          $http.post('/', $scope.user).then(function(response) {
+            if(response.data.username) {
+              // console.log('success: ', response.data);
+              $location.path('/user');
+            } else {
+              // console.log('failure: ', response);
+              swal(
+                'Your username or password was incorrect',
+                'Please try again.'
+              );
+            }
+          });
       }
     };
 
     $scope.registerUser = function() {
       if($scope.user.username === '' || $scope.user.password === '') {
-        // $scope.message = 'Please choose a username and password';
-        // alert(
-        //   'You forgot to enter something in. Please choose a username and password.'
-        // );
-
         swal(
-          'You forgot to enter something in. Please choose a username and password.'
+          'Oops!',
+          'You forgot to enter something in.',
+          'Please create a username and password.'
         );
 
       } else {
@@ -57,7 +44,6 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserServic
         },
         function(response) {
         //   console.log('error');
-          // $scope.message = 'Please try again';
           swal(
             'Please try again.'
           );
