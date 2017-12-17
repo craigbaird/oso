@@ -15,8 +15,7 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
   $scope.editComments = function() {
     console.log("Edit comments clicked");
   };
-
-  // FIX THIS
+  
   $scope.deleteBook = function(book){
     bookToDelete = book;
     swal({

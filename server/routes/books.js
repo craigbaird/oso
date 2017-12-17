@@ -53,7 +53,7 @@ router.post('/', function(req, res, next) {
       published_date: req.body.publishedDate,
       publisher: req.body.publisher,
       user_id : req.user._id,
-      comments: 'none'
+      my_comments: 'none'
     };
     Books.create(bookToSave, function(err, post) {
          if (err) {
@@ -63,7 +63,6 @@ router.post('/', function(req, res, next) {
          }
     });
 });
-
 
   // router.put("/", function(req, res){
   //   console.log(req.body);
@@ -95,6 +94,5 @@ router.post('/', function(req, res, next) {
         res.sendStatus(200);
       });
     });
-
 
 module.exports = router;
