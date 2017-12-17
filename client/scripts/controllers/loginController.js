@@ -9,9 +9,14 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserServic
     $scope.login = function() {
       if($scope.user.username === '' || $scope.user.password === '') {
         // $scope.message = 'Please enter your username and password';
-        alert(
+        // alert(
+        //   'You forgot to enter something in. Please enter your username and password.'
+        // );
+
+        swal(
           'You forgot to enter something in. Please enter your username and password.'
         );
+
       } else {
         $http.post('/', $scope.user).then(function(response) {
           if(response.data.username) {
@@ -20,9 +25,14 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserServic
           } else {
             // console.log('failure: ', response);
             // $scope.message = 'Your username/password was incorrect. Please try again.';
-            alert(
+            // alert(
+            //   'Your username or password was incorrect. Please try again.'
+            // );
+
+            swal(
               'Your username or password was incorrect. Please try again.'
             );
+
           }
         });
       }
@@ -31,9 +41,14 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserServic
     $scope.registerUser = function() {
       if($scope.user.username === '' || $scope.user.password === '') {
         // $scope.message = 'Please choose a username and password';
-        alert(
+        // alert(
+        //   'You forgot to enter something in. Please choose a username and password.'
+        // );
+
+        swal(
           'You forgot to enter something in. Please choose a username and password.'
         );
+
       } else {
         // console.log('sending to server...', $scope.user);
         $http.post('/register', $scope.user).then(function(response) {
@@ -43,7 +58,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserServic
         function(response) {
         //   console.log('error');
           // $scope.message = 'Please try again';
-          alert(
+          swal(
             'Please try again.'
           );
         });
