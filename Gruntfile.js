@@ -2,13 +2,13 @@ module.exports = function(grunt){
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    uglify: {
-      build: {
-        src: ['client/scripts/*.js',
-              'client/scripts/**/*.js'],
-        dest: 'server/public/scripts/client.min.js'
-      }
-    },
+    // uglify: {
+    //   build: {
+    //     src: ['client/scripts/*.js',
+    //           'client/scripts/**/*.js'],
+    //     dest: 'server/public/scripts/client.min.js'
+    //   }
+    // },
     copy: {
       html: {
         expand: true,
@@ -22,6 +22,13 @@ module.exports = function(grunt){
         cwd: 'client/styles',
         src: ['style.css'],
         dest: 'server/public/styles/'
+      },
+      scripts: {
+        expand: true,
+        cwd: 'client/scripts',
+        src: ['*.js',
+              '**/*.js'],
+        dest: 'server/public/scripts/'
       },
       angular: {
         expand: true,
@@ -39,7 +46,7 @@ module.exports = function(grunt){
               'angular-route.min.js.map'],
         dest: 'server/public/vendors/angular-route/'
       },
-   }, // end copy
+   }, 
     watch: {
       files: [
         'client/**/*.*'

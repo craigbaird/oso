@@ -17,7 +17,24 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="scripts/client.min.js"></script>
+        <script type="text/javascript" src="scripts/clientapp.js"></script>
+
+        <!-- Use if uglifying code -->
+        <!-- <script type="text/javascript" src="scripts/client.min.js"></script> -->
+
+        <!-- Controllers -->
+        <script type="text/javascript" src="scripts/controllers/bookResultsController.js"></script>
+        <script type="text/javascript" src="scripts/controllers/headerController.js"></script>
+        <script type="text/javascript" src="scripts/controllers/loginController.js"></script>
+        <script type="text/javascript" src="scripts/controllers/mainPageController.js"></script>
+        <script type="text/javascript" src="scripts/controllers/myBookShelfController.js"></script>
+        <script type="text/javascript" src="scripts/controllers/otherBookShelvesController.js"></script>
+        <script type="text/javascript" src="scripts/controllers/userController.js"></script>
+
+        <!-- Factories -->
+        <script type="text/javascript" src="scripts/factories/ApiService.js"></script>
+        <script type="text/javascript" src="scripts/factories/MyBookShelfService.js"></script>
+        <script type="text/javascript" src="scripts/factories/UserService.js"></script>
     </head>
     <body ng-app="myApp">
         <main ng-view></main>
