@@ -20,7 +20,8 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
         //   console.log('in getBooks function in ApiService.js', isbn);
             $http.get('/googleBooksApi/'+ isbn).then(function(response){
                 bookInfoFromApi.response = response.data;
-                console.log('Book Results From API: ', response.data.items);
+                // console.log('Book Results From API: ', response.data.items);
+                console.log('added to bookshelf');
 
 
                 // TRYING THIS
