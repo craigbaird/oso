@@ -46,7 +46,14 @@ module.exports = function(grunt){
               'angular-route.min.js.map'],
         dest: 'server/public/vendors/angular-route/'
       },
-   }, 
+      sweetAlert2: {
+        expand: true,
+        cwd: "node_modules/sweetalert2/dist/",
+        src: ["sweetalert2.min.css",
+              "sweetalert2.min.js"],
+        dest: "server/public/vendors/sweetalert2/"
+      }
+    },
     watch: {
       files: [
         'client/**/*.*'

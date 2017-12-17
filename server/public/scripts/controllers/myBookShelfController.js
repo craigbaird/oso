@@ -13,15 +13,28 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
   };
 
   $scope.editComments = function() {
-    console.log("Edit notes clicked");
+    console.log("Edit comments clicked");
   };
 
   // FIX THIS
   $scope.deleteBook = function(book){
     bookToDelete = book;
-    if (confirm ('Are you sure?')) {
-      MyBookShelfService.deleteBook(bookToDelete);
-    }
+    swal({
+      title: 'Are you sure?',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.value) {
+        MyBookShelfService.deleteBook(bookToDelete);
+        swal(
+          'Deleted!'
+        );
+      }
+    });
+
   };
 
   $scope.bookToSearch = ApiService.bookToSearch;

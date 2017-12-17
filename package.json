@@ -23,7 +23,8 @@
     "mongoose": "^4.11.8",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "sweetalert2": "^7.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
