@@ -13,7 +13,7 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
   };
 
   $scope.editComments = function() {
-    console.log("Edit notes clicked");
+    console.log("Edit comments clicked");
   };
 
   // FIX THIS
