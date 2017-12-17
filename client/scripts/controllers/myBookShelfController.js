@@ -29,9 +29,6 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
     }).then((result) => {
       if (result.value) {
         MyBookShelfService.deleteBook(bookToDelete);
-        swal(
-          'Deleted!'
-        );
       }
     });
 

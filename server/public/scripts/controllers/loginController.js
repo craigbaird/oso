@@ -39,11 +39,9 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserServic
       } else {
         // console.log('sending to server...', $scope.user);
         $http.post('/register', $scope.user).then(function(response) {
-        //   console.log('success');
           $location.path('/home');
         },
         function(response) {
-        //   console.log('error');
           swal(
             'Please try again.'
           );

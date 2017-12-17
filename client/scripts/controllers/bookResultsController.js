@@ -8,6 +8,9 @@ myApp.controller('BookResultsController', ['$scope', '$http', '$location', 'User
       $http.post('/books', book).then(function(response){
         console.log('Book Info Sent to Database');
         book = '';
+        swal (
+          'Added to Bookshelf!'
+        );
       });
     };
 
