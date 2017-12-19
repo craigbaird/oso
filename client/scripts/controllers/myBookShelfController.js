@@ -12,12 +12,13 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
       ApiService.getBooks(isbn);
   };
 
-  $scope.editComments = function() {
+  $scope.editComments = function(bookObject) {
     console.log("Edit comments clicked");
+    MyBookShelfService.editMyComments(bookObject);
   };
-  
-  $scope.deleteBook = function(book){
-    bookToDelete = book;
+
+  $scope.deleteBook = function(bookObject){
+    bookToDelete = bookObject;
     swal({
       title: 'Are you sure?',
       type: 'warning',
@@ -30,7 +31,6 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
         MyBookShelfService.deleteBook(bookToDelete);
       }
     });
-
   };
 
   $scope.bookToSearch = ApiService.bookToSearch;
