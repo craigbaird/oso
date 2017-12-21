@@ -64,7 +64,7 @@ router.post('/', function(req, res, next) {
     });
 });
 
-  // router.put('/', function(req, res){
+  // router.put('/:my_comments', function(req, res){
   //   console.log('in books route');
   //   console.log('request ', req.body);
   //   var book = req.body;
@@ -82,7 +82,7 @@ router.post('/', function(req, res, next) {
   //       }
   //       res.send(savedBook);
   //     });
-  //   });
+  //   });    
   // });
 
     router.delete('/:_id', function (req,res){
