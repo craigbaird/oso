@@ -14,8 +14,23 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
 
   $scope.editComments = function(bookObject) {
     console.log("Edit comments clicked");
+    appendInput();
     MyBookShelfService.editMyComments(bookObject);
   };
+
+  var counter = 0;
+  var limit = 1;
+  function appendInput() {
+    if (counter == limit)  {
+          alert("You have reached the limit of adding " + counter + " inputs");
+     }
+     else {
+          var myComments = document.createElement('div');
+          myComments.innerHTML = "Entry " + (counter + 1) + " <br><input type='text' name='myInputs[]'>";
+          document.getElementById(myComments).appendChild(myComments);
+          counter++;
+     }
+  }
 
   $scope.deleteBook = function(bookObject){
     bookToDelete = bookObject;
