@@ -10,6 +10,7 @@ myApp.factory('MyBookShelfService', ['$http', '$location', function($http, $loca
 
     let editMyComments = (object) => {
       // $http.put('/books/' + object._id).then(function(response) {
+        console.log(object._id);
         console.log('it works!');
       // });
     };
