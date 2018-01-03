@@ -51,4 +51,5 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
 
   $scope.bookToSearch = ApiService.bookToSearch;
   $scope.bookShelf = MyBookShelfService.bookShelf;
+  
 }]);
