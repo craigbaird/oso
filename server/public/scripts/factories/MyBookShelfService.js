@@ -46,6 +46,5 @@ myApp.factory('MyBookShelfService', ['$http', '$location', function($http, $loca
     //     // });
     //   }
     // };
-
-
+    
 }]);

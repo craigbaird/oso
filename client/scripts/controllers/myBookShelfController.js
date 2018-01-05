@@ -14,24 +14,27 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
 
   $scope.editComments = function(bookObject) {
     console.log("Edit comments clicked");
-    appendInput();
+    // appendInput();
     // this needs to be moved to a new function
     // MyBookShelfService.editMyComments(bookObject);
+    $scope.myValue = false;
+    $scope.showAlert = function(){
+    $scope.myvalue = true;
   };
 
-  var counter = 0;
-  var limit = 1;
-  function appendInput() {
-    if (counter == limit)  {
-      alert("You have reached the limit of adding " + counter + " inputs");
-      }
-      else {
-        var myComments = document.createElement('div');
-        myComments.innerHTML = "Entry " + (counter + 1) + " <br><input type='text' name='myInputs[]'>";
-        document.getElementById(myComments).appendChild(myComments);
-        counter++;
-      }
-  }
+  // var counter = 0;
+  // var limit = 1;
+  // function appendInput() {
+  //   if (counter == limit)  {
+  //     alert("You have reached the limit of adding " + counter + " inputs");
+  //     }
+  //     else {
+  //       var myComments = document.createElement('div');
+  //       myComments.innerHTML = "Entry " + (counter + 1) + " <br><input type='text' name='myInputs[]'>";
+  //       document.getElementById(myComments).appendChild(myComments);
+  //       counter++;
+  //     }
+  };
 
   $scope.deleteBook = function(bookObject){
     bookToDelete = bookObject;
@@ -51,5 +54,5 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
 
   $scope.bookToSearch = ApiService.bookToSearch;
   $scope.bookShelf = MyBookShelfService.bookShelf;
-  
+
 }]);
