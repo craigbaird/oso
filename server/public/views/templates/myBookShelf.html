@@ -16,11 +16,9 @@
             <li class="bookList" ng-repeat="(key, value) in book">
               <b>{{key}}:</b> {{value}}
             </li>
-            <div>
             <button class="btn btn-primary" ng-click="editForm=true">Edit Comments</button>
-              <input class="newBookComments" ng-show="editForm" ng-model="newComments.input">
+              <input class="newBookComments" type="text" ng-show="editForm" ng-model="newComments.input">
               <button class="btn btn-primary" ng-show="editForm" ng-click="editForm=false; editComments(book)">Submit</button>
-            </div>
             <button class="btn btn-primary" ng-click="deleteBook(book)">Delete Book</button>
           </ul>
           <br>

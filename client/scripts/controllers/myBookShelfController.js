@@ -12,10 +12,11 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
   };
 
   $scope.editComments = function(bookObject) {
-    console.log("submitted new comments");
+    console.log('submitted new comments');
     console.log(bookObject);
-    var newComments = $scope.newComments.input;
-    console.log(newComments);
+    console.log($scope.newComments.input);
+    // var newComments = $scope.newComments.input;
+    // console.log(newComments);
     // MyBookShelfService.editMyComments(bookObject);
   };
 
