@@ -1,6 +1,7 @@
 myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'UserService', 'ApiService', 'MyBookShelfService', function($scope, $http, $location, UserService, ApiService, MyBookShelfService) {
   $scope.logout = UserService.logout;
   $scope.bookShelf = {};
+  $scope.newComments = {};
 
   MyBookShelfService.getBookShelf();
 
@@ -14,9 +15,8 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
   $scope.editComments = function(bookObject) {
     console.log('submitted new comments');
     console.log(bookObject);
-    console.log($scope.newComments.input);
-    // var newComments = $scope.newComments.input;
-    // console.log(newComments);
+    var newComments = $scope.newComments.input;
+    console.log(newComments);
     // MyBookShelfService.editMyComments(bookObject);
   };
 
