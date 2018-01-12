@@ -64,26 +64,26 @@ router.post('/', function(req, res, next) {
     });
 });
 
-  // router.put('/:_id', function(req, res){
-  //   console.log('in books route');
-  //   console.log('request ', req.body);
-  //   var book = req.body;
-  //   Books.findById(req.body.id, function(err, foundBook){
-  //     if (err) {
-  //       console.log('error finding book ', err);
-  //       res.sendStatus(500);
-  //     }
-  //     foundBook.my_comments = req.body.my_comments;
-  //
-  //     foundBook.save(function(err, savedBook){
-  //       if (err){
-  //         console.log('error saving book', err);
-  //         res.sendStatus(500);
-  //       }
-  //       res.send(savedBook);
-  //     });
-  //   });
-  // });
+  router.put('/:_id', function(req, res){
+    console.log('in books route');
+    console.log('request ', req.body);
+    var book = req.body;
+    Books.findById(req.body.id, function(err, foundBook){
+      if (err) {
+        console.log('error finding book ', err);
+        res.sendStatus(500);
+      }
+      foundBook.my_comments = req.body.my_comments;
+
+      foundBook.save(function(err, savedBook){
+        if (err){
+          console.log('error saving book', err);
+          res.sendStatus(500);
+        }
+        res.send(savedBook);
+      });
+    });
+  });
 
     router.delete('/:_id', function (req,res){
       console.log(req.params._id);
