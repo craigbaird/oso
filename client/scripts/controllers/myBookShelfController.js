@@ -12,12 +12,11 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
     ApiService.getBooks(isbn);
   };
 
-  $scope.editComments = function(bookObject) {
-    console.log('submitting new comments');
-    console.log(bookObject);
-    var newComments = $scope.newComments.input;
-    bookObject.my_comments = newComments;
-    MyBookShelfService.editMyComments(bookObject);
+  $scope.editComments = function() {
+    let book = this.book;
+    console.log('book', book);
+     book.my_comments = $scope.newComments.input;
+    // MyBookShelfService.editMyComments(bookObject);
   };
 
   $scope.deleteBook = function(bookObject){
