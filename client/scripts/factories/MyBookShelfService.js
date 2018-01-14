@@ -8,16 +8,13 @@ myApp.factory('MyBookShelfService', ['$http', '$location', function($http, $loca
       });
     };
 
-    let editMyComments = (object) => {
-      $http.put('/books/' + object._id).then(function(response) {
-        console.log(object._id);
-        console.log('it works!');
+    let editMyComments = (bookObject) => {
+      $http.put('/books/editMyComments', bookObject).then(function(response) {
       });
     };
 
     let deleteBook = (object) => {
       $http.delete('/books/' + object._id).then(function(response) {
-        console.log('deleted!');
         getBookShelf();
       });
     };

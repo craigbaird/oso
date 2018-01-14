@@ -64,11 +64,9 @@ router.post('/', function(req, res, next) {
     });
 });
 
-  router.put('/:_id', function(req, res){
-    console.log('in books route');
-    console.log('request ', req.body);
+  router.put('/editMyComments', function(req, res){
     var book = req.body;
-    Books.findById(req.body.id, function(err, foundBook){
+    Books.findById(req.body._id, function(err, foundBook){
       if (err) {
         console.log('error finding book ', err);
         res.sendStatus(500);
