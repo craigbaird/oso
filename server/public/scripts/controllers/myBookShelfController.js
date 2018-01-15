@@ -16,6 +16,7 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
     let bookObject = this.book;
       bookObject.my_comments = $scope.newComments.input;
       MyBookShelfService.editMyComments(bookObject);
+      $scope.newComments.input = null;
   };
 
   $scope.deleteBook = function(bookObject){
