@@ -13,6 +13,7 @@
       <h2>My Books</h2>
         <div ng-repeat="book in bookShelf.list">
           <ul class="book">
+            <img class="image" ng-if="book.thumbnail" ng-src="{{ book.thumbnail }}"/>
             <li class="bookList" ng-repeat="(key, value) in book">
               <b>{{key}}:</b> {{value}}
             </li>
