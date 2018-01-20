@@ -71,7 +71,6 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
                 // Reading modes go here
                 bookInfoFromApi.title = response.data.items[0].volumeInfo.title;
 
-                // Redirect to Book Results page
                 $location.path('/bookResults');
             });
         },
