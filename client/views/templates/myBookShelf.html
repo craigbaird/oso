@@ -17,10 +17,16 @@
             <li class="bookList" ng-repeat="(key, value) in book">
               <b>{{key}}:</b> {{value}}
             </li>
-            <button class="btn btn-primary" ng-click="editForm=true">Edit Comments</button>
+            <button class="btn btn-primary" ng-click="editForm=true">Edit My Comments</button>
               <input class="newBookComments" type="text" ng-show="editForm" ng-model="newComments.input">
               <button class="btn btn-primary" ng-show="editForm" ng-click="editForm=false; editComments()">Submit</button>
+            <br>
             <button class="btn btn-primary" ng-click="deleteBook(book)">Delete Book</button>
+            <br>
+            <label>Book information incorrect?</label>
+            <button class="btn btn-primary" ng-click="flagBook=false">yes</button>
+            <button class="btn btn-primary" ng-click="flagBook=true">no</button>
+            <input class="flagBook" type="text" ng-show="flagBook" ng-model="flagBook.input">
           </ul>
           <br>
           <div id="myComments"></div>

@@ -10,13 +10,13 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
     // will need to add a way to allow for other input types
     var isbn = $scope.bookToSearch.name;
     ApiService.getBooks(isbn);
+    isbn = null;
   };
 
   $scope.editComments = function() {
     let bookObject = this.book;
       bookObject.my_comments = $scope.newComments.input;
       MyBookShelfService.editMyComments(bookObject);
-      // clear input field
       $scope.newComments.input = null;
   };
 
