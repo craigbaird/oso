@@ -26,7 +26,8 @@
             <label>Book information incorrect?</label>
             <button class="btn btn-primary" ng-click="flagBook=false">yes</button>
             <button class="btn btn-primary" ng-click="flagBook=true">no</button>
-            <input class="flagBook" type="text" ng-show="flagBook" ng-model="flagBook.input">
+              <input class="flagBook" type="text" ng-show="flagBook" ng-model="flagThisBook.input">
+              <button class="btn btn-primary" ng-show="flagBook" ng-click="flagBook=false">Submit</button>
           </ul>
           <br>
           <div id="myComments"></div>
