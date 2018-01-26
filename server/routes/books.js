@@ -16,7 +16,8 @@ var MyBookShelfSchema = mongoose.Schema({
   'published_date': String,
   'publisher': String,
   'user_id': String,
-  'my_comments': String
+  'my_comments': String,
+  'flagged': String,
 });
 
 var Books = mongoose.model('Books', MyBookShelfSchema);
