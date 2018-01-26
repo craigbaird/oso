@@ -13,6 +13,11 @@ myApp.factory('MyBookShelfService', ['$http', '$location', function($http, $loca
       });
     };
 
+    let flagBook = (bookObject) => {
+      $http.put('/books/flagBook', bookObject).then(function(response) {
+      });
+    };
+
     let deleteBook = (object) => {
       $http.delete('/books/' + object._id).then(function(response) {
         getBookShelf();

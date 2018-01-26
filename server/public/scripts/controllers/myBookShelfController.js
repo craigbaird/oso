@@ -20,6 +20,13 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
       $scope.newComments.input = null;
   };
 
+  $scope.flagBook = function() {
+    let bookObject = this.book;
+    bookObject.flagged = $scope.flagThisBook.input;
+    MyBookShelfService.flagBook(bookObject);
+    $scope.flagThisBook.input = null;
+  };
+
   $scope.deleteBook = function(bookObject){
     var bookToDelete = bookObject;
     swal({

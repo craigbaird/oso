@@ -53,7 +53,8 @@ router.post('/', function(req, res, next) {
       published_date: req.body.publishedDate,
       publisher: req.body.publisher,
       user_id : req.user._id,
-      my_comments: 'none'
+      my_comments: 'none',
+      flagged: ''
     };
     Books.create(bookToSave, function(err, post) {
          if (err) {
@@ -72,6 +73,25 @@ router.post('/', function(req, res, next) {
         res.sendStatus(500);
       }
       foundBook.my_comments = req.body.my_comments;
+
+      foundBook.save(function(err, savedBook){
+        if (err){
+          console.log('error saving book', err);
+          res.sendStatus(500);
+        }
+        res.send(savedBook);
+      });
+    });
+  });
+
+  router.put('/flagBook', function(req, res){
+    var book = req.body;
+    Books.findById(req.body._id, function(err, foundBook){
+      if (err) {
+        console.log('error finding book ', err);
+        res.sendStatus(500);
+      }
+      foundBook.flagged = req.body.flagged;
 
       foundBook.save(function(err, savedBook){
         if (err){
