@@ -26,6 +26,11 @@ input:focus {
 .bookList {
   list-style-type: none;
 }
+.btn-secondary {
+  color: black;
+  background-color: lightgrey;
+  width: 88%;
+}
 .title {
   font-size: 20px;
 }

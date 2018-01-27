@@ -24,10 +24,38 @@
             <button class="btn btn-primary" ng-click="deleteBook(book)">Delete Book</button>
             <br>
             <label>Book information incorrect?</label>
-            <button class="btn btn-primary" ng-click="flagBook=false">yes</button>
-            <button class="btn btn-primary" ng-click="flagBook=true">no</button>
-              <input class="flagBook" type="text" ng-show="flagBook" ng-model="flagThisBook.input">
-              <button class="btn btn-primary" ng-show="flagBook" ng-click="flagBook=false; flagBook()">Submit</button>
+            <button class="btn btn-primary" ng-click="flagInput=false">yes</button>
+            <button class="btn btn-danger" ng-click="flagInput=true">no</button>
+
+              <div class="btn-group" ng-show="flagInput">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Select Incorrect Category
+                </button>
+                <div class="dropdown-menu">
+                  <button class="dropdown-item btn btn-secondary">Title</button>
+                    <div class="dropdown-divider"></div>
+                  <button class="dropdown-item btn btn-secondary">Authors</button>
+                    <div class="dropdown-divider"></div>
+                  <button class="dropdown-item btn btn-secondary">Categories</button>
+                    <div class="dropdown-divider"></div>
+                  <button class="dropdown-item btn btn-secondary">Description</button>
+                    <div class="dropdown-divider"></div>
+                  <button class="dropdown-item btn btn-secondary">ISBN 10</button>
+                    <div class="dropdown-divider"></div>
+                  <button class="dropdown-item btn btn-secondary">ISBN 13</button>
+                    <div class="dropdown-divider"></div>
+                  <button class="dropdown-item btn btn-secondary">Language</button>
+                    <div class="dropdown-divider"></div>
+                  <button class="dropdown-item btn btn-secondary">Page Count</button>
+                    <div class="dropdown-divider"></div>
+                  <button class="dropdown-item btn btn-secondary">Published Date</button>
+                    <div class="dropdown-divider"></div>
+                  <button class="dropdown-item btn btn-secondary">Publisher</button>
+                </div>
+              </div>
+
+              <input class="flagBook" type="text" ng-show="flagInput" ng-model="flagThisBook.input">
+              <button class="btn btn-primary" ng-show="flagInput" ng-click="flagInput=false; addFlag()">Submit</button>
           </ul>
           <br>
           <div id="myComments"></div>

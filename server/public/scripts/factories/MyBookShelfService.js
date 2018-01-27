@@ -13,7 +13,7 @@ myApp.factory('MyBookShelfService', ['$http', '$location', function($http, $loca
       });
     };
 
-    let flagBook = (bookObject) => {
+    let flagMyBook = (bookObject) => {
       $http.put('/books/flagBook', bookObject).then(function(response) {
       });
     };
@@ -28,6 +28,7 @@ myApp.factory('MyBookShelfService', ['$http', '$location', function($http, $loca
       bookShelf,
       getBookShelf,
       editMyComments,
+      flagMyBook,
       deleteBook
     };
 

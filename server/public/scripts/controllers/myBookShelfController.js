@@ -2,6 +2,7 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
   $scope.logout = UserService.logout;
   $scope.bookShelf = {};
   $scope.newComments = {};
+  $scope.flagThisBook = {};
 
   MyBookShelfService.getBookShelf();
 
@@ -20,10 +21,10 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
       $scope.newComments.input = null;
   };
 
-  $scope.flagBook = function() {
+  $scope.addFlag = function() {
     let bookObject = this.book;
     bookObject.flagged = $scope.flagThisBook.input;
-    MyBookShelfService.flagBook(bookObject);
+    MyBookShelfService.flagMyBook(bookObject);
     $scope.flagThisBook.input = null;
   };
 
