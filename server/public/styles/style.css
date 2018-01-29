@@ -20,7 +20,7 @@ input:focus {
 
 }
 .book {
-  background-color: lightgrey;
+  background-color: #f7f7f7;
   border-radius: 10px;
 }
 .bookList {
