@@ -28,12 +28,12 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
     $scope.flagThisBook.input = null;
   };
 
-  $scope.selectFromDropdown = function(buttonClicked) {
-    let bookObject = this.book;
-    console.log(buttonClicked);
-    bookObject.flagged = buttonClicked;
-    MyBookShelfService.flagMyBook(bookObject);
-  };
+  // $scope.selectFromDropdown = function(buttonClicked) {
+  //   let bookObject = this.book;
+  //   console.log(buttonClicked);
+  //   bookObject.flagged = buttonClicked;
+  //   MyBookShelfService.flagMyBook(bookObject);
+  // };
 
   $scope.deleteBook = function(bookObject){
     var bookToDelete = bookObject;

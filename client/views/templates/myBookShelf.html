@@ -27,7 +27,7 @@
             <button class="btn btn-primary" ng-click="flagInput=false">yes</button>
             <button class="btn btn-danger" ng-click="flagInput=true">no</button>
 
-              <div class="btn-group" ng-show="flagInput">
+              <!-- <div class="btn-group" ng-show="flagInput">
                 <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Select Incorrect Category
                 </button>
@@ -52,7 +52,7 @@
                     <div class="dropdown-divider"></div>
                   <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('Publisher')">Publisher</button>
                 </div>
-              </div>
+              </div>  -->
 
               <input class="flagBook" type="text" ng-show="flagInput" ng-model="flagThisBook.input">
               <button class="btn btn-primary" ng-show="flagInput" ng-click="flagInput=false; addFlag()">Submit</button>
