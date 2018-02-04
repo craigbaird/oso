@@ -30,6 +30,12 @@ router.get('/', function(req, res) {
         console.log(err);
         res.sendStatus(500);
       }
+
+      for (var i = 0; i < allBooks.length; i++) {
+        delete allBooks[i]._id;
+      }
+      console.log("new books list:", allBooks[0]._id);
+
       res.send(allBooks);
     });
   }
