@@ -25,17 +25,12 @@ var Books = mongoose.model('Books', MyBookShelfSchema);
 router.get('/', function(req, res) {
   if(req.isAuthenticated()) {
     var user = req.user._id;
-    Books.find({user_id : user}, function(err, allBooks){
+    Books.find({user_id : user}, {_id : 0}, function(err, allBooks){
+      console.log(allBooks);
       if (err){
         console.log(err);
         res.sendStatus(500);
       }
-
-      for (var i = 0; i < allBooks.length; i++) {
-        delete allBooks[i]._id;
-      }
-      console.log("new books list:", allBooks[0]._id);
-
       res.send(allBooks);
     });
   }
