@@ -26,7 +26,14 @@ router.get('/', function(req, res) {
   if(req.isAuthenticated()) {
     var user = req.user._id;
     Books.find({user_id : user}, {_id : 0}, function(err, allBooks){
-      console.log(allBooks);
+      // console.log(allBooks);
+      
+      for (var i = 0; i < allBooks.length(); i++) {
+        allBooks.forEach(function(book) {
+          console.log(book);
+        });
+      }
+
       if (err){
         console.log(err);
         res.sendStatus(500);
