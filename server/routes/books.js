@@ -27,12 +27,10 @@ router.get('/', function(req, res) {
     var user = req.user._id;
     Books.find({user_id : user}, {_id : 0}, function(err, allBooks){
       // console.log(allBooks);
-      
-      for (var i = 0; i < allBooks.length(); i++) {
-        allBooks.forEach(function(book) {
-          console.log(book);
-        });
-      }
+
+      allBooks.forEach(function(book) {
+        console.log(Object.keys(book));
+      });
 
       if (err){
         console.log(err);
