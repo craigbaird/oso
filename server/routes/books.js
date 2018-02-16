@@ -29,8 +29,18 @@ router.get('/', function(req, res) {
       // console.log(allBooks);
 
       allBooks.forEach(function(book) {
-        console.log(Object.keys(book));
+        console.log(book);
+        for(var i = 0; i < book.length; i ++){
+          console.log(book[i]);
+        }
       });
+
+      // for (var i = 0; i < allBooks.length; i ++) {
+      //   i.forEach(function(book) {
+      //     console.log(book);
+      //   });
+      // }
+
 
       if (err){
         console.log(err);

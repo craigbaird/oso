@@ -75,5 +75,4 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
             });
         },
     };
-
 }]);
