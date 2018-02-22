@@ -28,18 +28,15 @@ router.get('/', function(req, res) {
     Books.find({user_id : user}, {_id : 0}, function(err, allBooks){
       // console.log(allBooks);
 
-      allBooks.forEach(function(book) {
-        console.log(book);
-        for(var i = 0; i < book.length; i ++){
-          console.log(book[i]);
-        }
+
+      allBooks.forEach(function(book, index) {
+          if ('_v' in book){
+            console.log(book);
+          }
       });
 
-      // for (var i = 0; i < allBooks.length; i ++) {
-      //   i.forEach(function(book) {
-      //     console.log(book);
-      //   });
-      // }
+
+
 
 
       if (err){
