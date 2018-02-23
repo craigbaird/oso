@@ -30,13 +30,10 @@ router.get('/', function(req, res) {
 
 
       allBooks.forEach(function(book, index) {
-          if ('_v' in book){
+          if (book.hasOwnProperty('_v')){
             console.log(book);
           }
       });
-
-
-
 
 
       if (err){
