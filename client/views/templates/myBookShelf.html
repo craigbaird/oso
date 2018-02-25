@@ -10,8 +10,8 @@
     </div>
 
     <div class="currentBookShelf">
-      <h2>My Books</h2>
-        <div ng-repeat="book in bookShelf.list">
+    	<h2>My Books</h2>
+        <div ng-repeat="book in bookShelf.list" ng-if="book._v !='_v'">
           <ul class="book">
             <img class="image" ng-if="book.thumbnail" ng-src="{{ book.thumbnail }}"/>
             <li class="bookList" ng-repeat="(key, value) in book">
@@ -23,42 +23,40 @@
             <br>
             <button class="btn btn-primary" ng-click="deleteBook(book)">Delete Book</button>
             <br>
-            <label>Book information incorrect?</label>
-            <button class="btn btn-primary" ng-click="flagInput=false">yes</button>
-            <button class="btn btn-danger" ng-click="flagInput=true">no</button>
+              <label>Book information incorrect?</label>
+              <button class="btn btn-primary" ng-click="flagInput=false">yes</button>
+              <button class="btn btn-danger" ng-click="flagInput=true">no</button>
 
-              <!-- <div class="btn-group" ng-show="flagInput">
-                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Select Incorrect Category
-                </button>
-                <div class="dropdown-menu">
-                  <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('Title')">Title</button>
-                    <div class="dropdown-divider"></div>
-                  <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('Authors')">Authors</button>
-                    <div class="dropdown-divider"></div>
-                  <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('Categories')">Categories</button>
-                    <div class="dropdown-divider"></div>
-                  <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('Description')">Description</button>
-                    <div class="dropdown-divider"></div>
-                  <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('ISBN 10')">ISBN 10</button>
-                    <div class="dropdown-divider"></div>
-                  <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('ISBN 13')">ISBN 13</button>
-                    <div class="dropdown-divider"></div>
-                  <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('Language')">Language</button>
-                    <div class="dropdown-divider"></div>
-                  <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('Page Count')">Page Count</button>
-                    <div class="dropdown-divider"></div>
-                  <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('Published Date')">Published Date</button>
-                    <div class="dropdown-divider"></div>
-                  <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('Publisher')">Publisher</button>
-                </div>
-              </div>  -->
-
-              <input class="flagBook" type="text" ng-show="flagInput" ng-model="flagThisBook.input">
-              <button class="btn btn-primary" ng-show="flagInput" ng-click="flagInput=false; addFlag()">Submit</button>
+                <!-- <div class="btn-group" ng-show="flagInput">
+                  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select Incorrect Category
+                  </button>
+                  <div class="dropdown-menu">
+                    <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('Title')">Title</button>
+                      <div class="dropdown-divider"></div>
+                    <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('Authors')">Authors</button>
+                      <div class="dropdown-divider"></div>
+                    <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('Categories')">Categories</button>
+                      <div class="dropdown-divider"></div>
+                    <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('Description')">Description</button>
+                      <div class="dropdown-divider"></div>
+                    <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('ISBN 10')">ISBN 10</button>
+                      <div class="dropdown-divider"></div>
+                    <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('ISBN 13')">ISBN 13</button>
+                      <div class="dropdown-divider"></div>
+                    <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('Language')">Language</button>
+                      <div class="dropdown-divider"></div>
+                    <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('Page Count')">Page Count</button>
+                      <div class="dropdown-divider"></div>
+                    <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('Published Date')">Published Date</button>
+                      <div class="dropdown-divider"></div>
+                    <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('Publisher')">Publisher</button>
+                  </div>
+                </div>  -->
+                  <p class="flagInputLabel" ng-show="flagInput"><b>Please describe the information that is incorrect</b></p>
+                  <input class="flagBook" type="text" ng-show="flagInput" ng-model="flagThisBook.input">
+                  <button class="btn btn-primary" ng-show="flagInput" ng-click="flagInput=false; addFlag()">Submit</button>
           </ul>
-          <br>
-          <div id="myComments"></div>
         </div>
     </div>
   </div>

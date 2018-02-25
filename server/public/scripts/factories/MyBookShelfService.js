@@ -1,6 +1,5 @@
 myApp.factory('MyBookShelfService', ['$http', '$location', function($http, $location){
     var bookShelf = {};
-    var bookToDelete = {};
 
     let getBookShelf = () => {
       $http.get('/books').then(function(response) {
@@ -18,8 +17,8 @@ myApp.factory('MyBookShelfService', ['$http', '$location', function($http, $loca
       });
     };
 
-    let deleteBook = (object) => {
-      $http.delete('/books/' + object._id).then(function(response) {
+    let deleteBook = (bookObject) => {
+      $http.delete('/books/' + bookObject._id).then(function(response) {
         getBookShelf();
       });
     };

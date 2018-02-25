@@ -25,15 +25,15 @@ var Books = mongoose.model('Books', MyBookShelfSchema);
 router.get('/', function(req, res) {
   if(req.isAuthenticated()) {
     var user = req.user._id;
-    Books.find({user_id : user}, {_id : 0}, function(err, allBooks){
+    Books.find({user_id : user}, function(err, allBooks){
       // console.log(allBooks);
 
 
-      allBooks.forEach(function(book, index) {
-          if (book.hasOwnProperty('_v')){
-            console.log(book);
-          }
-      });
+      // allBooks.forEach(function(book, index) {
+      //     if (book.hasOwnProperty('_v')){
+      //       console.log(book._v);
+      //     }
+      // });
 
 
       if (err){

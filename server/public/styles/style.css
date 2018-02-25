@@ -40,3 +40,6 @@ input:focus {
   background-position: left center;
   background-size: contain;
 }
+.flagInputLabel {
+  margin-top: 20px;
+}
