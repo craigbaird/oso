@@ -20,8 +20,9 @@ input:focus {
 
 }
 .book {
-  background-color: #f7f7f7;
+  background-color: lightgrey;
   border-radius: 10px;
+  margin-bottom: 40px;
 }
 .bookList {
   list-style-type: none;
