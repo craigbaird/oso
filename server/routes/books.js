@@ -18,7 +18,9 @@ var MyBookShelfSchema = mongoose.Schema({
   'user_id': String,
   'my_comments': String,
   'flagged': String
-});
+},
+{versionKey: false}
+);
 
 var Books = mongoose.model('Books', MyBookShelfSchema);
 
