@@ -11,11 +11,10 @@
 
     <div class="currentBookShelf">
     	<h2>My Books</h2>
-        <!-- <div ng-repeat="book in bookShelf.list" ng-if="book.__v!='__v'"> -->
         <div ng-repeat="book in bookShelf.list">
           <ul class="book">
             <img class="image" ng-if="book.thumbnail" ng-src="{{ book.thumbnail }}"/>
-            <li class="bookList" ng-repeat="(key, value) in book" ng-if="key != '__v'">
+            <li class="bookList" ng-repeat="(key, value) in book" ng-if="key != 'user_id' && key != '__v' && key != '_id'">
               <b>{{key}}:</b> {{value}}
             </li>
             <button class="btn btn-primary" ng-click="editForm=true">Edit My Comments</button>
@@ -24,7 +23,7 @@
             <br>
             <button class="btn btn-primary" ng-click="deleteBook(book)">Delete Book</button>
             <br>
-              <label>Book information incorrect?</label>
+              <label>Book information correct?</label>
               <button class="btn btn-primary" ng-click="flagInput=false">yes</button>
               <button class="btn btn-danger" ng-click="flagInput=true">no</button>
 
@@ -54,7 +53,7 @@
                     <button class="dropdown-item btn btn-secondary" ng-click="selectFromDropdown('Publisher')">Publisher</button>
                   </div>
                 </div>  -->
-                  <p class="flagInputLabel" ng-show="flagInput"><b>Please describe the information that is incorrect</b></p>
+                  <p class="flagInputLabel" ng-show="flagInput"><b>What information is incorrect?</b></p>
                   <input class="flagBook" type="text" ng-show="flagInput" ng-model="flagThisBook.input">
                   <button class="btn btn-primary" ng-show="flagInput" ng-click="flagInput=false; addFlag()">Submit</button>
           </ul>
