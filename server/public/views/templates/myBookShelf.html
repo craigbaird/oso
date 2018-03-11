@@ -14,7 +14,7 @@
         <div ng-repeat="book in bookShelf.list">
           <ul class="book">
             <img class="image" ng-if="book.thumbnail" ng-src="{{ book.thumbnail }}"/>
-            <li class="bookList" ng-repeat="(key, value) in book" ng-if="key != 'user_id' && key != '__v' && key != '_id'">
+            <li class="bookList" ng-repeat="(key, value) in book" ng-if="key != 'small_thumbnail' && key != 'thumbnail' && key != 'user_id' && key != '__v' && key != '_id'">
               <b>{{key}}:</b> {{value}}
             </li>
             <button class="btn btn-primary" ng-click="editForm=true">Edit My Comments</button>
