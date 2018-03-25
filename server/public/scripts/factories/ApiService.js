@@ -1,18 +1,5 @@
 myApp.factory('ApiService', ['$http', '$location', function($http, $location){
   var bookInfoFromApi = {};
-  var bookInfo = [];
-
-// break data object below into functions
-    // function formatLabel(fieldName){
-    //   return fieldName.toUpperCase()
-    // }
-    //
-    // function parseResults(obj){
-    //   var fields = ["thumbnail", "small_thumbnail"]
-    //   var results = {};
-    //   var display = {id: 1, label: formatLabel(field[i]), data: result[i]};
-    //
-    // }
 
     return {
         bookInfoFromApi : bookInfoFromApi,

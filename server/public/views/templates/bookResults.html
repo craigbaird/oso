@@ -1,7 +1,15 @@
 <div class="col">
     <div ng-include="'views/partials/header.html'"></div>
-       <div class="container">
-         <h1>Book Results</h1>
+        <div class="container" ng-repeat="book in bookInfoFromApi.volumeInfo">
+            <h1>Book Results</h1>
+              <ul class="book">
+                  <img class="image" ng-if="book.thumbnail" ng-src="{{ book.thumbnail }}"/>
+                  <li class="bookList" ng-repeat="(key, value) in book">
+                      <b>{{key}}:</b> {{value}}
+                  </li>
+              </ul>
+
+         <!--
          <h2 class="title">{{ bookInfoFromApi.title }} </h2>
          <div class="infoContainer" class="col">
                   <img class="image" ng-if="bookInfoFromApi.thumbnail" ng-src="{{ bookInfoFromApi.thumbnail }}"/>
@@ -45,6 +53,7 @@
                           <li><b>Text:</b> {{ bookInfoFromApi.response.items[0].volumeInfo.readingModes.text }}
                       </ul>
               </ul>
+            -->
           </div>
 
              <button class="btn btn-primary" ng-click="addBook(bookInfoFromApi)">Add to Bookshelf</button>
