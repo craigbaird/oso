@@ -1,6 +1,7 @@
 myApp.controller('BookResultsController', ['$scope', '$http', '$location', 'UserService', 'ApiService', function($scope, $http, $location, UserService, ApiService) {
     $scope.logout = UserService.logout;
     var book = {};
+    var bookInfo = {};
 
     $scope.addBook = function(bookInfoFromApi) {
         book = bookInfoFromApi;
@@ -13,4 +14,5 @@ myApp.controller('BookResultsController', ['$scope', '$http', '$location', 'User
         });
     };
     $scope.bookInfoFromApi = ApiService.bookInfoFromApi;
+
 }]);

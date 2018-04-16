@@ -11,10 +11,17 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
                     volumeInfo.push(item.volumeInfo);
                 });
                 bookInfoFromApi.volumeInfo = volumeInfo;
-                console.log('bookInfoFromApi', bookInfoFromApi);
-
+                console.log('bookInfoFromApi.volumeInfo', bookInfoFromApi.volumeInfo);
 
                 // // Break the object into easier to read parts
+                response.data.items.forEach(function(item, index){
+                    if (undefined != item.volumeInfo.title) {
+                      bookInfoFromApi.title = item.volumeInfo.title;
+                    }
+                    else {
+                      bookInfoFromApi.title = '';
+                    }
+                });
                 // bookInfoFromApi.thumbnail = response.data.items[0].volumeInfo.imageLinks.thumbnail;
                 // bookInfoFromApi.smallThumbnail = response.data.items[0].volumeInfo.imageLinks.smallThumbnail;
                 // bookInfoFromApi.allowAnonLogging = response.data.items[0].volumeInfo.allowAnonLogging;
