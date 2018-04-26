@@ -11,21 +11,24 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
                     volumeInfo.push(item.volumeInfo);
                 });
                 bookInfoFromApi.volumeInfo = volumeInfo;
-                console.log('bookInfoFromApi.volumeInfo', bookInfoFromApi.volumeInfo);
+                console.log('volumeInfo', volumeInfo);
 
                 // // Break the object into easier to read parts
-                response.data.items.forEach(function(item, index){
-                    if (undefined != item.volumeInfo.title) {
-                      bookInfoFromApi.title = item.volumeInfo.title;
-                    }
-                    else {
-                      bookInfoFromApi.title = '';
-                    }
-                });
+                // response.data.items.forEach(function(item, index){
+                //     if (undefined != item.volumeInfo.title) {
+                //       bookInfoFromApi.title = item.volumeInfo.title;
+                //     }
+                //     else {
+                //       bookInfoFromApi.title = '';
+                //     }
+                // });
+
+                
+
                 // bookInfoFromApi.thumbnail = response.data.items[0].volumeInfo.imageLinks.thumbnail;
                 // bookInfoFromApi.smallThumbnail = response.data.items[0].volumeInfo.imageLinks.smallThumbnail;
                 // bookInfoFromApi.allowAnonLogging = response.data.items[0].volumeInfo.allowAnonLogging;
-                // bookInfoFromApi.authors = response.data.items[0].volumeInfo.authors[0];
+                bookInfoFromApi.authors = response.data.items[0].volumeInfo.authors;
                 // bookInfoFromApi.averageRating = response.data.items[0].volumeInfo.averageRating;
                 // bookInfoFromApi.canonicalVolumeLink = response.data.items[0].volumeInfo.canonicalVolumeLink;
                 // bookInfoFromApi.categories = response.data.items[0].volumeInfo.categories[0];

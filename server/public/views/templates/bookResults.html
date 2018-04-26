@@ -9,6 +9,13 @@
                   </li>
               </ul>
 
+
+          <div class="infoContainer" class="col">
+              <ul>
+                  <li ng-repeat="author in bookInfoFromApi.authors"><b>Authors:</b> {{ author }} </li>
+              </ul>
+          </div>
+
          <!--
          <h2 class="title">{{ bookInfoFromApi.title }} </h2>
          <div class="infoContainer" class="col">
