@@ -4,15 +4,22 @@
             <h1>Book Results</h1>
               <ul class="book">
                   <img class="image" ng-if="book.thumbnail" ng-src="{{ book.thumbnail }}"/>
-                  <li class="bookList" ng-repeat="(key, value) in book">
+                  <li class="bookList" ng-repeat="(key, value) in book" ng-if="key == 'title' || key == 'authors'">
                       <b>{{key}}:</b> {{value}}
                   </li>
               </ul>
 
 
           <div class="infoContainer" class="col">
-              <ul>
-                  <li ng-repeat="author in bookInfoFromApi.authors"><b>Authors:</b> {{ author }} </li>
+              <ul><b>Authors:</b>
+                  <li ng-repeat="author in bookInfoFromApi.authors">
+                      {{ author }}
+                  </li>
+              </ul>
+              <ul><b>Categories:</b>
+                  <li ng-repeat="category in bookInfoFromApi.categories">
+                      {{ category }}
+                  </li>
               </ul>
           </div>
 

@@ -11,19 +11,9 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
                     volumeInfo.push(item.volumeInfo);
                 });
                 bookInfoFromApi.volumeInfo = volumeInfo;
-                console.log('volumeInfo', volumeInfo);
+                console.log('volumeInfo.title', volumeInfo.title);
 
                 // // Break the object into easier to read parts
-                // response.data.items.forEach(function(item, index){
-                //     if (undefined != item.volumeInfo.title) {
-                //       bookInfoFromApi.title = item.volumeInfo.title;
-                //     }
-                //     else {
-                //       bookInfoFromApi.title = '';
-                //     }
-                // });
-
-                
 
                 // bookInfoFromApi.thumbnail = response.data.items[0].volumeInfo.imageLinks.thumbnail;
                 // bookInfoFromApi.smallThumbnail = response.data.items[0].volumeInfo.imageLinks.smallThumbnail;
@@ -31,7 +21,7 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
                 bookInfoFromApi.authors = response.data.items[0].volumeInfo.authors;
                 // bookInfoFromApi.averageRating = response.data.items[0].volumeInfo.averageRating;
                 // bookInfoFromApi.canonicalVolumeLink = response.data.items[0].volumeInfo.canonicalVolumeLink;
-                // bookInfoFromApi.categories = response.data.items[0].volumeInfo.categories[0];
+                bookInfoFromApi.categories = response.data.items[0].volumeInfo.categories;
                 // bookInfoFromApi.contentVersion = response.data.items[0].volumeInfo.contentVersion;
                 // bookInfoFromApi.description = response.data.items[0].volumeInfo.description;
                 // // Industry identifiers go here
