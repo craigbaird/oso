@@ -4,21 +4,56 @@
             <h1>Book Results</h1>
               <ul class="book">
                   <img class="image" ng-if="book.thumbnail" ng-src="{{ book.thumbnail }}"/>
-                  <li class="bookList" ng-repeat="(key, value) in book" ng-if="key == 'title' || key == 'authors'">
+                  <li class="bookList" ng-repeat="(key, value) in book">
                       <b>{{key}}:</b> {{value}}
                   </li>
               </ul>
 
 
           <div class="infoContainer" class="col">
+              <ul><b>Title:</b>
+                  <li>
+                      {{bookInfoFromApi.title}}
+                  </li>
+              </ul>
               <ul><b>Authors:</b>
                   <li ng-repeat="author in bookInfoFromApi.authors">
-                      {{ author }}
+                      {{author}}
                   </li>
               </ul>
               <ul><b>Categories:</b>
                   <li ng-repeat="category in bookInfoFromApi.categories">
-                      {{ category }}
+                      {{category}}
+                  </li>
+              </ul>
+              <ul><b>Description:</b>
+                  <li>
+                      {{bookInfoFromApi.description}}
+                  </li>
+              </ul>
+              <ul><b>Industy Identifiers:</b>
+                  <li ng-repeat="identifier in bookInfoFromApi.industryIdentifiers">
+                      {{identifier}}
+                  </li>
+              </ul>
+              <ul><b>Language:</b>
+                  <li>
+                      {{bookInfoFromApi.language}}
+                  </li>
+              </ul>
+              <ul><b>Page Count:</b>
+                  <li>
+                      {{bookInfoFromApi.pageCount}}
+                  </li>
+              </ul>
+              <ul><b>Published Date</b>
+                  <li>
+                      {{bookInfoFromApi.publishedDate}}
+                  </li>
+              </ul>
+              <ul><b>Publisher</b>
+                  <li>
+                      {{bookInfoFromApi.publisher}}
                   </li>
               </ul>
           </div>
