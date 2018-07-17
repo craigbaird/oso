@@ -11,49 +11,54 @@
 
 
           <div class="infoContainer" class="col">
-              <ul><b>Title:</b>
+              <ul ng-if="bookInfoFromApi.title != undefined"><b>Title:</b>
                   <li>
                       {{bookInfoFromApi.title}}
                   </li>
               </ul>
-              <ul><b>Authors:</b>
+              <ul ng-if="bookInfoFromApi.authors != undefined"><b>Authors:</b>
                   <li ng-repeat="author in bookInfoFromApi.authors">
                       {{author}}
                   </li>
               </ul>
-              <ul><b>Categories:</b>
-                  <li ng-repeat="category in bookInfoFromApi.categories">
-                      {{category}}
-                  </li>
-              </ul>
-              <ul><b>Description:</b>
+              <ul ng-if="bookInfoFromApi.publisher != undefined"><b>Publisher</b>
                   <li>
-                      {{bookInfoFromApi.description}}
+                      {{bookInfoFromApi.publisher}}
                   </li>
               </ul>
-              <ul><b>Industy Identifiers:</b>
-                  <li ng-repeat="identifier in bookInfoFromApi.industryIdentifiers">
-                      {{identifier}}
-                  </li>
-              </ul>
-              <ul><b>Language:</b>
-                  <li>
-                      {{bookInfoFromApi.language}}
-                  </li>
-              </ul>
-              <ul><b>Page Count:</b>
-                  <li>
-                      {{bookInfoFromApi.pageCount}}
-                  </li>
-              </ul>
-              <ul><b>Published Date</b>
+              <ul ng-if="bookInfoFromApi.publishedDate != undefined"><b>Published Date</b>
                   <li>
                       {{bookInfoFromApi.publishedDate}}
                   </li>
               </ul>
-              <ul><b>Publisher</b>
+              <ul ng-if="bookInfoFromApi.description != undefined"><b>Description:</b>
                   <li>
-                      {{bookInfoFromApi.publisher}}
+                      {{bookInfoFromApi.description}}
+                  </li>
+              </ul>
+              <ul ng-if="bookInfoFromApi.industryIdentifiers != undefined"><b>Industy Identifiers:</b>
+                  <li ng-repeat="identifier in bookInfoFromApi.industryIdentifiers">
+                      {{identifier.type}}: {{identifier.identifier}}
+                  </li>
+              </ul>
+              <ul ng-if="bookInfoFromApi.categories != undefined"><b>Categories:</b>
+                  <li ng-repeat="category in bookInfoFromApi.categories">
+                      {{category}}
+                  </li>
+              </ul>
+              <ul ng-if="bookInfoFromApi.pageCount != undefined"><b>Page Count:</b>
+                  <li>
+                      {{bookInfoFromApi.pageCount}}
+                  </li>
+              </ul>
+              <ul ng-if="bookInfoFromApi.language != undefined"><b>Language:</b>
+                  <li>
+                      {{bookInfoFromApi.language}}
+                  </li>
+              </ul>
+              <ul ng-if="bookInfoFromApi.printType != undefined"><b>Print Type</b>
+                  <li>
+                      {{bookInfoFromApi.printType}}
                   </li>
               </ul>
           </div>

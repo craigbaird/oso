@@ -33,7 +33,7 @@
               </ul>
               <ul><b>Industy Identifiers:</b>
                   <li ng-repeat="identifier in bookInfoFromApi.industryIdentifiers">
-                      {{identifier}}
+                      {{identifier.type}}: {{identifier.identifier}}
                   </li>
               </ul>
               <ul><b>Language:</b>
