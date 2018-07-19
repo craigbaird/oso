@@ -6,24 +6,25 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
         getBooks : function(isbn){
             $http.get('/googleBooksApi/'+ isbn).then(function(response){
                 var allGoogleBooksResults = response.data;
+                console.log(bookInfoFromApi);
                 var volumeInfo = [];
                 allGoogleBooksResults.items.forEach(function(item, index) {
                     volumeInfo.push(item.volumeInfo);
                 });
                 bookInfoFromApi.volumeInfo = volumeInfo;
-                console.log('volumeInfo.title', volumeInfo.title);
 
                 // // Break the object into easier to read parts
 
                 bookInfoFromApi.title = response.data.items[0].volumeInfo.title;
                 bookInfoFromApi.authors = response.data.items[0].volumeInfo.authors;
-                bookInfoFromApi.categories = response.data.items[0].volumeInfo.categories;
+                bookInfoFromApi.publisher = response.data.items[0].volumeInfo.publisher;
+                bookInfoFromApi.publishedDate = response.data.items[0].volumeInfo.publishedDate;
                 bookInfoFromApi.description = response.data.items[0].volumeInfo.description;
                 bookInfoFromApi.industryIdentifiers = response.data.items[0].volumeInfo.industryIdentifiers;
+                bookInfoFromApi.industryIdentifiers = response.data.items[0].volumeInfo.readingModes;
+                bookInfoFromApi.categories = response.data.items[0].volumeInfo.categories;
                 bookInfoFromApi.language = response.data.items[0].volumeInfo.language;
                 bookInfoFromApi.pageCount = response.data.items[0].volumeInfo.pageCount;
-                bookInfoFromApi.publishedDate = response.data.items[0].volumeInfo.publishedDate;
-                bookInfoFromApi.publisher = response.data.items[0].volumeInfo.publisher;
                 // bookInfoFromApi.thumbnail = response.data.items[0].volumeInfo.imageLinks.thumbnail;
                 // bookInfoFromApi.smallThumbnail = response.data.items[0].volumeInfo.imageLinks.smallThumbnail;
                 // bookInfoFromApi.allowAnonLogging = response.data.items[0].volumeInfo.allowAnonLogging;
