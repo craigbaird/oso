@@ -5,11 +5,13 @@ a {
 .btn {
     margin: 10px;
 }
+
 .headerContainer {
     height: 75px;
     width: auto;
     background-color: lightgrey;
 }
+
 .category {
   background-color: lightgrey;
   height: 300px;
@@ -17,19 +19,23 @@ a {
   border-radius: 10px;
 
 }
+
 .book {
   background-color: lightgrey;
   border-radius: 10px;
   margin-bottom: 40px;
 }
+
 .bookList {
   list-style-type: none;
 }
+
 .btn-secondary {
   color: black;
   background-color: lightgrey;
   width: 88%;
 }
+
 .title {
   font-size: 20px;
 }
