@@ -1,9 +1,7 @@
 a {
     text-decoration: none;
 }
-input:focus {
-  background-image: none;
-}
+
 .btn {
     margin: 10px;
 }
@@ -35,12 +33,7 @@ input:focus {
 .title {
   font-size: 20px;
 }
-.searchBar {
-  background-image: url('/assets/search_icon.png');
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: contain;
-}
+
 .flagInputLabel {
   margin-top: 20px;
 }
