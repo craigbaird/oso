@@ -15,25 +15,18 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
   };
 
   $scope.editComments = function() {
-    let bookObject = this.book;
+    var bookObject = this.book;
       bookObject.my_comments = $scope.newComments.input;
       MyBookShelfService.editMyComments(bookObject);
       $scope.newComments.input = null;
   };
 
   $scope.addFlag = function() {
-    let bookObject = this.book;
+    var bookObject = this.book;
     bookObject.flagged = $scope.flagThisBook.input;
     MyBookShelfService.flagMyBook(bookObject);
     $scope.flagThisBook.input = null;
   };
-
-  // $scope.selectFromDropdown = function(buttonClicked) {
-  //   let bookObject = this.book;
-  //   console.log(buttonClicked);
-  //   bookObject.flagged = buttonClicked;
-  //   MyBookShelfService.flagMyBook(bookObject);
-  // };
 
   $scope.deleteBook = function(bookObject){
     var bookToDelete = bookObject;
@@ -44,7 +37,7 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
+    }).then(function(result) {
       if (result.value) {
         MyBookShelfService.deleteBook(bookToDelete);
       }
