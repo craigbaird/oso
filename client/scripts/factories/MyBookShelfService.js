@@ -1,24 +1,24 @@
 myApp.factory('MyBookShelfService', ['$http', '$location', function($http, $location){
     var bookShelf = {};
 
-    let getBookShelf = () => {
+    var getBookShelf = () => {
       $http.get('/books').then(function(response) {
         var bookList = response.data;
         bookShelf.list = response.data;
         });
     };
 
-    let editMyComments = (bookObject) => {
+    var editMyComments = (bookObject) => {
       $http.put('/books/editMyComments', bookObject).then(function(response) {
       });
     };
 
-    let flagMyBook = (bookObject) => {
+    var flagMyBook = (bookObject) => {
       $http.put('/books/flagBook', bookObject).then(function(response) {
       });
     };
 
-    let deleteBook = (bookObject) => {
+    var deleteBook = (bookObject) => {
       $http.delete('/books/' + bookObject._id).then(function(response) {
         getBookShelf();
       });
