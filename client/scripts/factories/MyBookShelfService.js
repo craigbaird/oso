@@ -9,13 +9,11 @@ myApp.factory('MyBookShelfService', ['$http', '$location', function($http, $loca
     };
 
     var editMyComments = function(bookObject){
-      $http.put('/books/editMyComments', bookObject).then(function(response) {
-      });
+      $http.put('/books/editMyComments', bookObject);
     };
 
     var flagMyBook = function(bookObject) {
-      $http.put('/books/flagBook', bookObject).then(function(response) {
-      });
+      $http.put('/books/flagBook', bookObject)
     };
 
     var deleteBook = function(bookObject) {
