@@ -13,7 +13,7 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location){
                 });
                 bookInfoFromApi.volumeInfo = volumeInfo;
 
-                // // Break the object into easier to read parts
+                // Break the object into easier to read parts
 
                 bookInfoFromApi.title = response.data.items[0].volumeInfo.title;
                 bookInfoFromApi.authors = response.data.items[0].volumeInfo.authors;
