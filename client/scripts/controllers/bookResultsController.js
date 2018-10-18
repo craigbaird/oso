@@ -13,5 +13,4 @@ myApp.controller('BookResultsController', ['$scope', '$http', '$location', 'User
         });
     };
     $scope.bookInfoFromApi = ApiService.bookInfoFromApi;
-
 }]);
