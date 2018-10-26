@@ -1,4 +1,4 @@
-myApp.factory('ApiService', ['$http', '$location', function($http, $location){
+myApp.factory('ApiService', ['$http', '$location', function($http, $location) {
   var bookInfoFromApi = {};
 
     return {
