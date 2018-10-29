@@ -5,7 +5,7 @@ myApp.controller('BookResultsController', ['$scope', '$http', '$location', 'User
     $scope.addBook = function(bookInfoFromApi) {
         book = bookInfoFromApi;
 
-        $http.post('/books', book).then(function(response){
+        $http.post('/books', book).then(function(response) {
             book = '';
             swal (
                 'Added to Bookshelf!'

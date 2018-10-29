@@ -35,7 +35,7 @@ myApp.factory('ApiService', ['$http', '$location', function($http, $location) {
                 // bookInfoFromApi.previewLink = response.data.items[0].volumeInfo.previewLink;
                 // bookInfoFromApi.printType = response.data.items[0].volumeInfo.printType;
                 // bookInfoFromApi.ratingsCount = response.data.items[0].volumeInfo.ratingsCount;
-                // // Reading modes go here
+                // Reading modes go here
 
                 $location.path('/bookResults');
             });
