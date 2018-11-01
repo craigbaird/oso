@@ -25,7 +25,7 @@ var Books = mongoose.model('Books', MyBookShelfSchema);
 router.get('/', function(req, res) {
   if(req.isAuthenticated()) {
     var user = req.user._id;
-    Books.find({user_id : user}, function(error, allBooks){
+    Books.find({user_id : user}, function(error, allBooks) {
       if (error){
         console.log(error);
         res.sendStatus(500);
