@@ -1,4 +1,4 @@
-myApp.factory('MyBookShelfService', ['$http', '$location', function($http, $location){
+myApp.factory('MyBookShelfService', ['$http', '$location', function($http, $location) {
     var bookShelf = {};
 
     var getBookShelf = function() {
